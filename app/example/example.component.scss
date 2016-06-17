@@ -1,0 +1,10 @@
+@import 'assets/_master.scss';
+
+.container {
+    &.example {
+        max-width:$siteWidth;
+        min-height:200px;
+        margin:0 auto;
+        background-color:$exampleColor;
+    }
+}

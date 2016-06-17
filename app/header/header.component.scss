@@ -1,8 +1,12 @@
-$BgClr: #333;
-$BtnClr: #fff;
-$TxtClr: #333;
+@import 'assets/_master.scss';
 
-h1 {
-  background-color: $BgClr;
-  color: $BtnClr;
+.header {
+    nav {
+       >div{
+            margin: 0 auto;
+            max-width:$siteWidth;
+        }
+        margin:0;
+        padding:0;
+    }
 }

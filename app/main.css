@@ -5816,3 +5816,18 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
+
+html {
+  position: relative;
+  min-height: 100%; }
+
+body {
+  background-color: #fafafa; }
+
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px; }
+
+.container .text-muted {
+  margin: 20px 0; }
