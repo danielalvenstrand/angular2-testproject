@@ -9,25 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var page_service_1 = require('../page.service');
-var HeaderComponent = (function () {
-    function HeaderComponent() {
+var page_service_1 = require('./page.service');
+var header_component_1 = require('./header/header.component');
+var footer_component_1 = require('./footer/footer.component');
+var notes_component_1 = require('./notes/notes.component');
+var example_component_1 = require('./example/example.component');
+var AppComponent = (function () {
+    function AppComponent() {
     }
-    HeaderComponent.prototype.setTab = function (value) {
-        page_service_1.PageService.setCurrentPage(value);
+    AppComponent.prototype.ngOnInit = function () {
+        page_service_1.PageService.setCurrentPage(0);
     };
-    HeaderComponent.prototype.isTab = function (value) {
+    AppComponent.prototype.isPage = function (value) {
         return page_service_1.PageService.getCurrentPage() == value;
     };
-    HeaderComponent = __decorate([
+    AppComponent = __decorate([
         core_1.Component({
-            selector: 'header-component',
-            templateUrl: 'app/header/header.component.html',
-            styleUrls: ['app/header/header.component.css']
+            selector: 'app-component',
+            templateUrl: 'app/app.component.html',
+            directives: [header_component_1.HeaderComponent, footer_component_1.FooterComponent, notes_component_1.NotesComponent, example_component_1.ExampleComponent]
         }), 
         __metadata('design:paramtypes', [])
-    ], HeaderComponent);
-    return HeaderComponent;
+    ], AppComponent);
+    return AppComponent;
 }());
-exports.HeaderComponent = HeaderComponent;
-//# sourceMappingURL=header.component.js.map
+exports.AppComponent = AppComponent;
+//# sourceMappingURL=app.component.js.map

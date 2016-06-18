@@ -1,0 +1,9 @@
+@import 'assets/_master.scss';
+
+.notes {
+    max-width:$siteWidth;
+    >textarea{
+        min-width:100%;
+        min-height:150px;
+    }
+}

@@ -1,14 +1,5 @@
-import { Component } from '@angular/core';
+import { bootstrap }    from '@angular/platform-browser-dynamic';
+import { PageService } from './page.service';
+import { AppComponent } from './app.component';
 
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { ExampleComponent } from './example/example.component';
-
-@Component({
-  selector: 'main-component',
-  templateUrl: 'app/main.html',
-  directives: [HeaderComponent,FooterComponent,ExampleComponent],
-  styleUrls: ['app/main.css']
-})
-export class MainComponent { }
-
+bootstrap(AppComponent,[PageService]);

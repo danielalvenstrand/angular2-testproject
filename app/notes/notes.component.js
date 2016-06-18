@@ -9,25 +9,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var page_service_1 = require('../page.service');
-var HeaderComponent = (function () {
-    function HeaderComponent() {
+var Note = (function () {
+    function Note() {
     }
-    HeaderComponent.prototype.setTab = function (value) {
-        page_service_1.PageService.setCurrentPage(value);
+    return Note;
+}());
+exports.Note = Note;
+var NotesComponent = (function () {
+    function NotesComponent() {
+        this.currentText = '';
+        this.notes = [];
+    }
+    NotesComponent.prototype.onKey = function (value) {
+        this.currentText = value;
     };
-    HeaderComponent.prototype.isTab = function (value) {
-        return page_service_1.PageService.getCurrentPage() == value;
+    NotesComponent.prototype.onClick = function (value) {
+        this.notes.push(value);
+        this.currentText = '';
     };
-    HeaderComponent = __decorate([
+    NotesComponent = __decorate([
         core_1.Component({
-            selector: 'header-component',
-            templateUrl: 'app/header/header.component.html',
-            styleUrls: ['app/header/header.component.css']
+            selector: 'notes-component',
+            templateUrl: 'app/notes/notes.component.html',
+            styleUrls: ['app/notes/notes.component.css']
         }), 
         __metadata('design:paramtypes', [])
-    ], HeaderComponent);
-    return HeaderComponent;
+    ], NotesComponent);
+    return NotesComponent;
 }());
-exports.HeaderComponent = HeaderComponent;
-//# sourceMappingURL=header.component.js.map
+exports.NotesComponent = NotesComponent;
+//# sourceMappingURL=notes.component.js.map
