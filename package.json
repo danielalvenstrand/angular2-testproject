@@ -2,15 +2,14 @@
   "name": "angular2-quickstart",
   "version": "1.0.0",
   "scripts": {
-    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" \"npm run sass:start\" ",
+    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" \"npm run sass:watch\"",
     "lite": "lite-server",
     "postinstall": "typings install",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "typings": "typings",
     "sass": "gulp sass",
-    "sass:watch": "gulp sass:watch",
-    "sass:start": "gulp sass:start"
+    "sass:watch": "nodemon -e scss -x \"npm run sass\""
   },
   "license": "ISC",
   "dependencies": {
@@ -27,12 +26,12 @@
     "bootstrap-sass": "^3.3.6",
     "core-js": "^2.4.0",
     "gulp": "^3.9.1",
-    "gulp-npm-script-sync": "^1.1.0",
     "gulp-sass": "^2.3.2",
-    "node-sass": "^3.7.0",
+    "node-sass": "^3.8.0",
+    "nodemon": "^1.9.2",
     "reflect-metadata": "^0.1.3",
     "rxjs": "5.0.0-beta.6",
-    "systemjs": "0.19.27",
+    "systemjs": "^0.19.27",
     "zone.js": "^0.6.12"
   },
   "devDependencies": {

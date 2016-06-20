@@ -1,0 +1,5 @@
+.container.example {
+  max-width: 960px;
+  min-height: 200px;
+  margin: 0 auto;
+  background-color: #fff; }

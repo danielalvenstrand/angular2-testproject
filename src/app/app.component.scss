@@ -1,0 +1,20 @@
+@import 'assets/styles/_master.scss';
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    background-color:$backgroundColor;
+}
+
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+
+.container .text-muted {
+  margin: 20px 0;
+}

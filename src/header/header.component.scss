@@ -1,0 +1,12 @@
+@import 'assets/styles/_master.scss';
+
+.header {
+    nav {
+       >div{
+            margin: 0 auto;
+            max-width:$siteWidth;
+        }
+        margin:0;
+        padding:0;
+    }
+}

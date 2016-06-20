@@ -1,18 +1,9 @@
 'use strict';
 var gulp = require('gulp');
-var sync = require('gulp-npm-script-sync');
 var sass = require('gulp-sass');
 
-gulp.task('sass:start', ['sass','sass:watch']);
-
 gulp.task('sass', function () {
-  gulp.src('./app/**/*.scss')
+  gulp.src('./src/**/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./app'));
+    .pipe(gulp.dest('./src'));
 });
-
-gulp.task('sass:watch', function () {
-  gulp.watch('./app/**/*.scss', ['sass']);
-});
-
-sync(gulp);

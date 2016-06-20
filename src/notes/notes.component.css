@@ -1,0 +1,7 @@
+.notes {
+  max-width: 960px; }
+  .notes textarea {
+    min-width: 100%;
+    min-height: 150px;
+    resize: none;
+    margin-bottom: 10px; }
