@@ -9,19 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var page_service_1 = require('./page.service');
+var app_service_1 = require('./app.service');
 var header_component_1 = require('./header/header.component');
 var footer_component_1 = require('./footer/footer.component');
 var notes_component_1 = require('./notes/notes.component');
 var example_component_1 = require('./example/example.component');
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(_appService) {
+        this._appService = _appService;
+        this._appService = _appService;
     }
     AppComponent.prototype.ngOnInit = function () {
-        page_service_1.PageService.setCurrentPage(0);
+        this._appService.setCurrentPage(0);
     };
     AppComponent.prototype.isPage = function (value) {
-        return page_service_1.PageService.getCurrentPage() == value;
+        return this._appService.isCurrentPage(value);
     };
     AppComponent = __decorate([
         core_1.Component({
@@ -29,7 +31,7 @@ var AppComponent = (function () {
             templateUrl: 'app/app.component.html',
             directives: [header_component_1.HeaderComponent, footer_component_1.FooterComponent, notes_component_1.NotesComponent, example_component_1.ExampleComponent]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [app_service_1.AppService])
     ], AppComponent);
     return AppComponent;
 }());

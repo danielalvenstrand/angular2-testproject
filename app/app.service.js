@@ -9,20 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var PageService = (function () {
-    function PageService() {
+var AppService = (function () {
+    function AppService() {
     }
-    PageService.prototype.isCurrentPage = function (value) {
+    AppService.prototype.isCurrentPage = function (value) {
         return this._currentPage == value;
     };
-    PageService.prototype.setCurrentPage = function (value) {
+    AppService.prototype.setCurrentPage = function (value) {
         this._currentPage = value;
     };
-    PageService = __decorate([
+    AppService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], PageService);
-    return PageService;
+    ], AppService);
+    return AppService;
 }());
-exports.PageService = PageService;
-//# sourceMappingURL=page.service.js.map
+exports.AppService = AppService;
+//# sourceMappingURL=app.service.js.map

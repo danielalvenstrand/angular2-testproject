@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 
-import { PageService } from './page.service';
+import { AppService } from './app.service';
 
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -14,11 +14,15 @@ import { ExampleComponent } from './example/example.component';
   directives: [HeaderComponent,FooterComponent,NotesComponent,ExampleComponent]
 })
 export class AppComponent implements OnInit{
+    constructor(private _appService: AppService){
+        this._appService = _appService;
+    }
+
 	ngOnInit(){
-		PageService.setCurrentPage(0);
+		this._appService.setCurrentPage(0);
 	}
 	isPage(value:number){
-		return PageService.getCurrentPage()==value;
+		return this._appService.isCurrentPage(value);
 	}
 }
 
