@@ -1,3 +1,7 @@
+.container {
+  background-color: #fdfdfd;
+  border: 1px dashed #ddd; }
+
 .header nav {
   margin: 0;
   padding: 0; }

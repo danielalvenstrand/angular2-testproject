@@ -17,14 +17,18 @@ var Note = (function () {
 exports.Note = Note;
 var NotesComponent = (function () {
     function NotesComponent() {
+        this.componentTitle = 'Notes component';
         this.currentText = '';
         this.notes = [];
     }
-    NotesComponent.prototype.onKey = function (value) {
-        this.currentText = value;
+    NotesComponent.prototype.ngOnInit = function () {
+        console.log(this.componentTitle + " has been loaded.");
     };
     NotesComponent.prototype.onClick = function (value) {
-        this.notes.push(value);
+        this.notes.push({
+            text: value,
+            date: new Date()
+        });
         this.currentText = '';
     };
     NotesComponent = __decorate([

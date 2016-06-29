@@ -1,3 +1,7 @@
+.container {
+  background-color: #fdfdfd;
+  border: 1px dashed #ddd; }
+
 .container.example {
   max-width: 960px;
   min-height: 200px;

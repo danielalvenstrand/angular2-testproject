@@ -2,6 +2,9 @@
 
 .notes {
     max-width:$siteWidth;
+    .panel {
+    	margin:$componentMargin;
+    }
     textarea{
         min-width:100%;
         min-height:150px;

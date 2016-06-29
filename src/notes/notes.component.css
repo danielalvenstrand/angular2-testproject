@@ -1,5 +1,11 @@
+.container {
+  background-color: #fdfdfd;
+  border: 1px dashed #ddd; }
+
 .notes {
   max-width: 960px; }
+  .notes .panel {
+    margin: 10px; }
   .notes textarea {
     min-width: 100%;
     min-height: 150px;

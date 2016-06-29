@@ -2,3 +2,9 @@ $siteWidth: 960px;
 $backgroundColor: #fafafa;
 $exampleColor: #fff;
 $footerHeight: 60px;
+$componentMargin: 10px;
+
+.container {
+  background-color: #fdfdfd;
+  border: 1px dashed #ddd;
+}

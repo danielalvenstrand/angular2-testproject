@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { INote } from './note';
 
 export class Note {
     text: string;
@@ -11,16 +12,21 @@ export class Note {
   templateUrl: 'notes.component.html',
   styleUrls: ['notes.component.css']
 })
-export class NotesComponent {
-    currentText = '';
-    notes = [];
+export class NotesComponent implements OnInit{
+    componentTitle: string = 'Notes component';
+    currentText: string = '';
+    notes:INote[] = [];
 
-    onKey(value: string) {
-        this.currentText = value;
+    ngOnInit():void {
+      console.log(this.componentTitle+" has been loaded.");
     }
 
-    onClick(value: string) {
-        this.notes.push(value);
+    onClick(value: string): void {
+
+        this.notes.push({
+          text:value,
+          date: new Date()
+        });
         this.currentText = '';
     }
 }
