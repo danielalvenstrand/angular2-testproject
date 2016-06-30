@@ -1,10 +1,13 @@
 .container {
-  background-color: #fdfdfd;
-  border: 1px dashed #ddd; }
-
-html {
-  position: relative;
-  min-height: 100%; }
+  border: 4px dashed #ddd;
+  margin: 4px auto;
+  border-radius: 4px;
+  padding: 0; }
 
 body {
   background-color: #fafafa; }
+
+.page-wrap {
+  min-height: 100%;
+  margin-bottom: -60px;
+  padding-bottom: 60px; }

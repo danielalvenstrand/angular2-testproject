@@ -1,13 +1,14 @@
 .container {
-  background-color: #fdfdfd;
-  border: 1px dashed #ddd; }
+  border: 4px dashed #ddd;
+  margin: 4px auto;
+  border-radius: 4px;
+  padding: 0; }
 
-.notes {
-  max-width: 960px; }
-  .notes .panel {
-    margin: 10px; }
-  .notes textarea {
-    min-width: 100%;
-    min-height: 150px;
-    resize: none;
-    margin-bottom: 10px; }
+.notes .panel {
+  margin: 10px; }
+
+.notes textarea {
+  min-width: 100%;
+  min-height: 150px;
+  resize: none;
+  margin-bottom: 10px; }

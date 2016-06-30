@@ -1,14 +1,17 @@
 @import 'assets/styles/_master.scss';
 
+$noteHeight: 150px;
+
 .notes {
-    max-width:$siteWidth;
+    //max-width:$siteWidth;
     .panel {
     	margin:$componentMargin;
     }
     textarea{
         min-width:100%;
-        min-height:150px;
+        min-height:$noteHeight;
         resize:none;
         margin-bottom:10px;
-    } 
-} 
+    }
+}
+

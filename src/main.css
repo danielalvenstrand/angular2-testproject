@@ -1,7 +1,9 @@
 @charset "UTF-8";
 .container {
-  background-color: #fdfdfd;
-  border: 1px dashed #ddd; }
+  border: 4px dashed #ddd;
+  margin: 4px auto;
+  border-radius: 4px;
+  padding: 0; }
 
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)

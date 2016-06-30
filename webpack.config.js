@@ -1,0 +1,5 @@
+module: {
+    noParse: [
+      /aws\-sdk/,
+    ]
+  }

@@ -29,5 +29,6 @@ export class NotesComponent implements OnInit{
         });
         this.currentText = '';
     }
+
 }
 

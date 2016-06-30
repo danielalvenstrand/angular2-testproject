@@ -1,9 +1,10 @@
 .container {
-  background-color: #fdfdfd;
-  border: 1px dashed #ddd; }
+  border: 4px dashed #ddd;
+  margin: 4px auto;
+  border-radius: 4px;
+  padding: 0; }
 
 .container.example {
-  max-width: 960px;
   min-height: 200px;
   margin: 0 auto;
   background-color: #fff; }

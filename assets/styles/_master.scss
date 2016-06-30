@@ -5,6 +5,8 @@ $footerHeight: 60px;
 $componentMargin: 10px;
 
 .container {
-  background-color: #fdfdfd;
-  border: 1px dashed #ddd;
+  border: 4px dashed #ddd;
+  margin: 4px auto;
+  border-radius:4px;
+  padding:0;
 }
