@@ -7,7 +7,7 @@ import { INote } from './note';
   selector: 'notes-component',
   templateUrl: 'notes.component.html',
   styleUrls: ['notes.component.css']
-});
+})
 
 export class NotesComponent implements OnInit{
     months:string[] = ["January","February","Mars","April","May","June","July","August","September","October","November","December"];
