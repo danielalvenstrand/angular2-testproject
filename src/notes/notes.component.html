@@ -8,15 +8,15 @@
             <hr />
             <div class="row">
                 <div class="col-sm-6 col-xs-12">
-                <p>Add a note:</p>
-                <button class="btn btn-default" (click)="addTag('h1');">h1</button>
-                <button class="btn btn-default" (click)="addTag('h2');">h2</button>
-                <button class="btn btn-default" (click)="addTag('h3');">h3</button>
-                <button class="btn btn-default" (click)="addTag('p');">p</button>
-                <button class="btn btn-default" (click)="addTag('em');">em</button>
-                <button class="btn btn-default" (click)="addTag('strong');">strong</button>
-                <button class="btn btn-default" (click)="addTag('pre');">pre</button>
-                <button class="btn btn-default pull-right" (click)="clearNote()"><span class="glyphicon glyphicon-trash"></span></button>
+                    <p>Add a note:</p>
+                    <button class="btn btn-default" (click)="addTag('h1');">h1</button>
+                    <button class="btn btn-default" (click)="addTag('h2');">h2</button>
+                    <button class="btn btn-default" (click)="addTag('h3');">h3</button>
+                    <button class="btn btn-default" (click)="addTag('p');">p</button>
+                    <button class="btn btn-default" (click)="addTag('em');">em</button>
+                    <button class="btn btn-default" (click)="addTag('strong');">strong</button>
+                    <button class="btn btn-default" (click)="addTag('pre');">pre</button>
+                    <button class="btn btn-default pull-right" (click)="clearNote()"><span class="glyphicon glyphicon-trash"></span></button>
                     <textarea class="form-control" #note
                     [(ngModel)]='currentText'></textarea>
                     <button class="btn btn-default full-width" (click)="saveNote(note.value);">Add note</button>
@@ -30,12 +30,9 @@
                     </div>
                 </div>
             </div>
-
-
             <div *ngIf='notes && notes.length'>
-            <hr />
-            <h2>Saved notes:</h2>
-
+                <hr />
+                <h2>Saved notes:</h2>
                 <div class="col-sm-6 col-xs-12" *ngFor='let note of notes'>
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -44,10 +41,8 @@
                         <div class="panel-body">
                             <span [innerHTML]='note.text'></span>
                         </div>
-
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
