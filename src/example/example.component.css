@@ -1,7 +1,11 @@
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url("node_modules/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.eot");
+  src: url("node_modules/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("node_modules/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("node_modules/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons-halflingsregular") format("svg"); }
+
 .container {
-  border: 4px dashed #ddd;
+  border: 2px dashed #d9d9d9;
   margin: 4px auto;
-  border-radius: 4px;
   padding: 0; }
 
 .container.example {

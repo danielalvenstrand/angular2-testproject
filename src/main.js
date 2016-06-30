@@ -3,4 +3,5 @@ var platform_browser_dynamic_1 = require('@angular/platform-browser-dynamic');
 var app_service_1 = require('./app/app.service');
 var app_component_1 = require('./app/app.component');
 platform_browser_dynamic_1.bootstrap(app_component_1.AppComponent, [app_service_1.AppService]);
+require("node_modules/jquery/dist/jquery.js");
 //# sourceMappingURL=main.js.map

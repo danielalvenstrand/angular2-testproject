@@ -9,14 +9,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var Note = (function () {
-    function Note() {
-    }
-    return Note;
-}());
-exports.Note = Note;
 var NotesComponent = (function () {
     function NotesComponent() {
+        this.months = ["January", "February", "Mars", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         this.componentTitle = 'Notes component';
         this.currentText = '';
         this.notes = [];
@@ -24,12 +19,21 @@ var NotesComponent = (function () {
     NotesComponent.prototype.ngOnInit = function () {
         console.log(this.componentTitle + " has been loaded.");
     };
-    NotesComponent.prototype.onClick = function (value) {
+    NotesComponent.prototype.saveNote = function (value) {
         this.notes.push({
             text: value,
             date: new Date()
         });
         this.currentText = '';
+    };
+    NotesComponent.prototype.addTag = function (tag) {
+        this.currentText += "<" + tag + "></" + tag + ">";
+    };
+    NotesComponent.prototype.clearNote = function () {
+        this.currentText = '';
+    };
+    NotesComponent.prototype.removeNote = function (note) {
+        this.notes.splice(this.notes.indexOf(note), 1);
     };
     NotesComponent = __decorate([
         core_1.Component({

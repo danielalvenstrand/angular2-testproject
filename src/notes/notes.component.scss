@@ -13,5 +13,16 @@ $noteHeight: 150px;
         resize:none;
         margin-bottom:10px;
     }
+    .btn {
+        &.full-width{
+            width:100%;
+        }
+    }
+    .glyphicon {
+        color: aaa;
+        &:hover{
+            color:333;
+        }
+    }
 }
 
