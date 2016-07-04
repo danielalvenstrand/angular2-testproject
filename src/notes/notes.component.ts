@@ -1,4 +1,6 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { Control, ControlGroup, Validators, FormBuilder, AbstractControl } from '@angular/common';
+import {StringMapWrapper} from '@angular/core/src/facade/collection';
 
 import { INote } from './note';
 
@@ -10,21 +12,43 @@ import { INote } from './note';
 })
 
 export class NotesComponent implements OnInit{
-    months:string[] = ["January","February","Mars","April","May","June","July","August","September","October","November","December"];
-    componentTitle: string = 'Notes component';
-    currentText: string = '';
-    notes:INote[] = [];
+    componentTitle: string;
+    currentSubject: string;
+    currentText: string;
+    notes:INote[];
+
+    noteSubject: Control;
+    noteText: Control;
+    noteForm: ControlGroup;
+
+    constructor(private builder: FormBuilder){
+       this.noteSubject = new Control("",Validators.required);
+       this.noteText = new Control("",Validators.required);
+
+       this.noteForm = builder.group({
+         noteSubject: this.noteSubject,
+         noteText: this.noteText
+       });
+    }
 
     ngOnInit():void {
+      this.componentTitle  = 'Notes component';
+      this.currentSubject = null;
+      this.currentText = null;
+      this.notes = [];
+
       console.log(this.componentTitle+" has been loaded.");
     }
 
-    saveNote(value: string): void {
+    saveNote(): void {
+      if(this.noteForm.valid){
         this.notes.push({
-          text:value,
+          subject:this.currentSubject,
+          text:this.currentText,
           date: new Date()
         });
-        this.currentText = '';
+        this.clearNote();
+      }
     }
 
     addTag(tag: string): void {
@@ -32,7 +56,7 @@ export class NotesComponent implements OnInit{
     }
 
     clearNote(): void {
-      this.currentText = '';
+      this.currentText = this.currentSubject = '';
     }
 
     removeNote(note:INote): void {

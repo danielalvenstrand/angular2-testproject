@@ -9,23 +9,46 @@
             <div class="row">
                 <div class="col-sm-6 col-xs-12">
                     <p>Add a note:</p>
-                    <button class="btn btn-default" (click)="addTag('h1');">h1</button>
-                    <button class="btn btn-default" (click)="addTag('h2');">h2</button>
-                    <button class="btn btn-default" (click)="addTag('h3');">h3</button>
-                    <button class="btn btn-default" (click)="addTag('p');">p</button>
-                    <button class="btn btn-default" (click)="addTag('em');">em</button>
-                    <button class="btn btn-default" (click)="addTag('strong');">strong</button>
-                    <button class="btn btn-default" (click)="addTag('pre');">pre</button>
-                    <button class="btn btn-default pull-right" (click)="clearNote()"><span class="glyphicon glyphicon-trash"></span></button>
-                    <textarea class="form-control" #note
-                    [(ngModel)]='currentText'></textarea>
-                    <button class="btn btn-default full-width" (click)="saveNote(note.value);">Add note</button>
+                    <div class="note-menu form-group">
+                        <button class="btn btn-default" (click)="addTag('h1');">h1</button>
+                        <button class="btn btn-default" (click)="addTag('h2');">h2</button>
+                        <button class="btn btn-default" (click)="addTag('h3');">h3</button>
+                        <button class="btn btn-default" (click)="addTag('p');">p</button>
+                        <button class="btn btn-default" (click)="addTag('em');">em</button>
+                        <button class="btn btn-default" (click)="addTag('strong');">strong</button>
+                        <button class="btn btn-default" (click)="addTag('pre');">pre</button>
+                        <button class="btn btn-default pull-right" (click)="clearNote()">
+                            <span class="glyphicon glyphicon-trash"></span></button>
+                    </div>
+                    <form (ngSubmit)="saveNote()" [ngFormModel]="noteForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="noteSubject" placeholder="Subject" required
+                             [(ngModel)]='currentSubject' ngControl="noteSubject"/>
+                            <div class="alert alert-danger"
+                            [hidden]="!noteSubject.dirty || noteSubject.valid">
+                                Please specify a note subject.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="noteText" placeholder="Write some text..." required
+                             [(ngModel)]='currentText' ngControl="noteText"></textarea>
+                            <div class="alert alert-danger"
+                            [hidden]="!noteText.dirty || noteText.valid">
+                                Please write a note.
+                            </div>
+                        </div>
+                        <button class="btn btn-default full-width"
+                        [disabled]="!noteForm.valid">Add note</button>
+                    </form>
                 </div>
                 <div class="col-sm-6 col-xs-12">
-                    <div class="panel panel-default" *ngIf='currentText && currentText.length'>
-                        <div class="panel-heading">Current note:</div>
+                    <div class="panel panel-default"
+                    *ngIf='(currentText && currentText.length) || (currentSubject && currentSubject.length)'>
+                        <div class="panel-heading">
+                            <span [innerHTML]='currentSubject'></span>
+                        </div>
                         <div class="panel-body">
-                            <span class="current-note" [innerHTML]='currentText'></span>
+                            <span [innerHTML]='currentText'></span>
                         </div>
                     </div>
                 </div>
@@ -36,10 +59,14 @@
                 <div class="col-sm-6 col-xs-12" *ngFor='let note of notes'>
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <em>{{note.date | date:"hh:mm"}} - {{note.date | date:"fullDate"}}</em><span class="glyphicon glyphicon-remove pull-right" (click)='removeNote(note)'></span>
+                            <span [innerHTML]='note.subject'></span><span class="close glyphicon glyphicon-remove"
+                            (click)='removeNote(note)'></span>
                         </div>
                         <div class="panel-body">
                             <span [innerHTML]='note.text'></span>
+                        </div>
+                        <div class="panel-footer">
+                            <em>{{note.date | date:"hh:mm"}} - {{note.date | date:"fullDate"}}</em>
                         </div>
                     </div>
                 </div>

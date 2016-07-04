@@ -9,28 +9,39 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var common_1 = require('@angular/common');
 var NotesComponent = (function () {
-    function NotesComponent() {
-        this.months = ["January", "February", "Mars", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        this.componentTitle = 'Notes component';
-        this.currentText = '';
-        this.notes = [];
+    function NotesComponent(builder) {
+        this.builder = builder;
+        this.noteSubject = new common_1.Control("", common_1.Validators.required);
+        this.noteText = new common_1.Control("", common_1.Validators.required);
+        this.noteForm = builder.group({
+            noteSubject: this.noteSubject,
+            noteText: this.noteText
+        });
     }
     NotesComponent.prototype.ngOnInit = function () {
+        this.componentTitle = 'Notes component';
+        this.currentSubject = null;
+        this.currentText = null;
+        this.notes = [];
         console.log(this.componentTitle + " has been loaded.");
     };
-    NotesComponent.prototype.saveNote = function (value) {
-        this.notes.push({
-            text: value,
-            date: new Date()
-        });
-        this.currentText = '';
+    NotesComponent.prototype.saveNote = function () {
+        if (this.noteForm.valid) {
+            this.notes.push({
+                subject: this.currentSubject,
+                text: this.currentText,
+                date: new Date()
+            });
+            this.clearNote();
+        }
     };
     NotesComponent.prototype.addTag = function (tag) {
         this.currentText += "<" + tag + "></" + tag + ">";
     };
     NotesComponent.prototype.clearNote = function () {
-        this.currentText = '';
+        this.currentText = this.currentSubject = '';
     };
     NotesComponent.prototype.removeNote = function (note) {
         this.notes.splice(this.notes.indexOf(note), 1);
@@ -42,7 +53,7 @@ var NotesComponent = (function () {
             templateUrl: 'notes.component.html',
             styleUrls: ['notes.component.css']
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [common_1.FormBuilder])
     ], NotesComponent);
     return NotesComponent;
 }());
