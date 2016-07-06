@@ -10,38 +10,44 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
+var note_component_1 = require('../shared/note/note.component');
 var NotesComponent = (function () {
-    function NotesComponent(builder) {
-        this.builder = builder;
+    function NotesComponent(_fb) {
+        this._fb = _fb;
+        this.componentTitle = 'Notes component';
+        this.hide = false;
+        this.notes = [];
         this.noteSubject = new common_1.Control("", common_1.Validators.required);
         this.noteText = new common_1.Control("", common_1.Validators.required);
-        this.noteForm = builder.group({
+        this.noteForm = _fb.group({
             noteSubject: this.noteSubject,
             noteText: this.noteText
         });
     }
     NotesComponent.prototype.ngOnInit = function () {
-        this.componentTitle = 'Notes component';
-        this.currentSubject = null;
-        this.currentText = null;
-        this.notes = [];
         console.log(this.componentTitle + " has been loaded.");
+    };
+    NotesComponent.prototype.toggleHide = function () {
+        this.hide = !this.hide;
     };
     NotesComponent.prototype.saveNote = function () {
         if (this.noteForm.valid) {
             this.notes.push({
-                subject: this.currentSubject,
-                text: this.currentText,
+                subject: this.noteSubject.value,
+                text: this.noteText.value,
                 date: new Date()
             });
             this.clearNote();
         }
     };
     NotesComponent.prototype.addTag = function (tag) {
-        this.currentText += "<" + tag + "></" + tag + ">";
+        this.noteText.updateValue(this.noteText.value + "<" + tag + "></" + tag + ">");
     };
     NotesComponent.prototype.clearNote = function () {
-        this.currentText = this.currentSubject = '';
+        $.each(this.noteForm.controls, function (index, control) {
+            control.updateValue('');
+            control.setErrors(null);
+        });
     };
     NotesComponent.prototype.removeNote = function (note) {
         this.notes.splice(this.notes.indexOf(note), 1);
@@ -51,7 +57,8 @@ var NotesComponent = (function () {
             moduleId: module.id,
             selector: 'notes-component',
             templateUrl: 'notes.component.html',
-            styleUrls: ['notes.component.css']
+            styleUrls: ['notes.component.css'],
+            directives: [note_component_1.NoteComponent]
         }), 
         __metadata('design:paramtypes', [common_1.FormBuilder])
     ], NotesComponent);

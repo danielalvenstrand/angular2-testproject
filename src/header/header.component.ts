@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-import { AppService } from '../app/app.service';
-
 @Component({
 	moduleId: module.id,
 	selector: 'header-component',
@@ -9,15 +7,18 @@ import { AppService } from '../app/app.service';
 	styleUrls: ['header.component.css']
 })
 export class HeaderComponent {
-    constructor(private _appService: AppService){
-        this._appService = _appService;
+    tab: number;
+
+    constructor(){
+        this.tab = 0;
     }
 
 	setTab(value:number){
-		this._appService.setCurrentPage(value);
+		this.tab = value;
 	}
+
 	isTab(value:number){
-		return this._appService.isCurrentPage(value);
+		return this.tab == value;
 	}
 }
 

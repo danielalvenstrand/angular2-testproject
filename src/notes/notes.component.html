@@ -4,9 +4,14 @@
             <strong>{{componentTitle}}</strong>
         </div>
         <div class="panel-body">
-            <p><em>Add notes with this component.</em></p>
-            <hr />
-            <div class="row">
+            <p><em>Add notes with this component.</em>
+                <a href="#" (click)="toggleHide()">
+                    <span class="glyphicon pull-right"
+                    [ngClass]="{'glyphicon-menu-right':hide, 'glyphicon-menu-down':!hide}"></span>
+                </a>
+            </p>
+            <hr [hidden]="hide"/>
+            <div class="row" [hidden]="hide">
                 <div class="col-sm-6 col-xs-12">
                     <p>Add a note:</p>
                     <div class="note-menu form-group">
@@ -23,17 +28,21 @@
                     <form (ngSubmit)="saveNote()" [ngFormModel]="noteForm">
                         <div class="form-group">
                             <input type="text" class="form-control" name="noteSubject" placeholder="Subject" required
-                             [(ngModel)]='currentSubject' ngControl="noteSubject"/>
-                            <div class="alert alert-danger"
+                              ngControl="noteSubject"/>
+                            <div class="alert alert-danger" role="alert"
                             [hidden]="!noteSubject.dirty || noteSubject.valid">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                <span class="sr-only">Error:</span>
                                 Please specify a note subject.
                             </div>
                         </div>
                         <div class="form-group">
                             <textarea class="form-control" name="noteText" placeholder="Write some text..." required
-                             [(ngModel)]='currentText' ngControl="noteText"></textarea>
-                            <div class="alert alert-danger"
+                              ngControl="noteText"></textarea>
+                            <div class="alert alert-danger" role="alert"
                             [hidden]="!noteText.dirty || noteText.valid">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                <span class="sr-only">Error:</span>
                                 Please write a note.
                             </div>
                         </div>
@@ -43,12 +52,12 @@
                 </div>
                 <div class="col-sm-6 col-xs-12">
                     <div class="panel panel-default"
-                    *ngIf='(currentText && currentText.length) || (currentSubject && currentSubject.length)'>
+                    *ngIf='(noteText.value && noteText.value.length) || (noteSubject.value && noteSubject.value.length)'>
                         <div class="panel-heading">
-                            <span [innerHTML]='currentSubject'></span>
+                            <span [innerHTML]='noteSubject.value'></span>
                         </div>
                         <div class="panel-body">
-                            <span [innerHTML]='currentText'></span>
+                            <span [innerHTML]='noteText.value'></span>
                         </div>
                     </div>
                 </div>
@@ -56,20 +65,8 @@
             <div *ngIf='notes && notes.length'>
                 <hr />
                 <h2>Saved notes:</h2>
-                <div class="col-sm-6 col-xs-12" *ngFor='let note of notes'>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <span [innerHTML]='note.subject'></span><span class="close glyphicon glyphicon-remove"
-                            (click)='removeNote(note)'></span>
-                        </div>
-                        <div class="panel-body">
-                            <span [innerHTML]='note.text'></span>
-                        </div>
-                        <div class="panel-footer">
-                            <em>{{note.date | date:"hh:mm"}} - {{note.date | date:"fullDate"}}</em>
-                        </div>
-                    </div>
-                </div>
+                <note-component *ngFor='let note of notes' [note]='note' (close)='removeNote($event)'>
+                </note-component>
             </div>
         </div>
     </div>

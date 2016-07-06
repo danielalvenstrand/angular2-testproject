@@ -1,0 +1,14 @@
+<div class="col-sm-6 col-xs-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <span [innerHTML]='note.subject'></span><span class="close glyphicon glyphicon-remove"
+            (click)='close()'></span>
+        </div>
+        <div class="panel-body">
+            <span [innerHTML]='note.text'></span>
+        </div>
+        <div class="panel-footer">
+            <em>{{note.date | date:"hh:mm"}} - {{note.date | date:"fullDate"}}</em>
+        </div>
+    </div>
+</div>

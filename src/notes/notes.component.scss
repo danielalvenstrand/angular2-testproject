@@ -20,10 +20,12 @@ $noteHeight: 150px;
         }
 
     }
-    .glyphicon {
-        color: aaa;
-        &:hover{
-            color:333;
+    .note-menu{
+        .btn {
+            color: aaa;
+            &:hover{
+                color:333;
+            }
         }
     }
     .note-menu {

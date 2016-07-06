@@ -9,17 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var app_service_1 = require('../app/app.service');
 var HeaderComponent = (function () {
-    function HeaderComponent(_appService) {
-        this._appService = _appService;
-        this._appService = _appService;
+    function HeaderComponent() {
+        this.tab = 0;
     }
     HeaderComponent.prototype.setTab = function (value) {
-        this._appService.setCurrentPage(value);
+        this.tab = value;
     };
     HeaderComponent.prototype.isTab = function (value) {
-        return this._appService.isCurrentPage(value);
+        return this.tab == value;
     };
     HeaderComponent = __decorate([
         core_1.Component({
@@ -28,7 +26,7 @@ var HeaderComponent = (function () {
             templateUrl: 'header.component.html',
             styleUrls: ['header.component.css']
         }), 
-        __metadata('design:paramtypes', [app_service_1.AppService])
+        __metadata('design:paramtypes', [])
     ], HeaderComponent);
     return HeaderComponent;
 }());
