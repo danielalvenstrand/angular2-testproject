@@ -5,32 +5,30 @@
         </div>
         <div class="panel-body">
             <p><em>Add notes with this component.</em>
-                <a href="#" (click)="toggleHide()">
-                    <span class="glyphicon pull-right"
-                    [ngClass]="{'glyphicon-menu-right':hide, 'glyphicon-menu-down':!hide}"></span>
-                </a>
+                <span class="glyphicon pull-right btn btn-default"
+                (click)="toggleHide()" [ngClass]="{'glyphicon-menu-right':hide, 'glyphicon-menu-down':!hide}"></span>
             </p>
             <hr [hidden]="hide"/>
             <div class="row" [hidden]="hide">
                 <div class="col-sm-6 col-xs-12">
                     <p>Add a note:</p>
                     <div class="note-menu form-group">
-                        <button class="btn btn-default" (click)="addTag('h1');">h1</button>
-                        <button class="btn btn-default" (click)="addTag('h2');">h2</button>
-                        <button class="btn btn-default" (click)="addTag('h3');">h3</button>
-                        <button class="btn btn-default" (click)="addTag('p');">p</button>
-                        <button class="btn btn-default" (click)="addTag('em');">em</button>
-                        <button class="btn btn-default" (click)="addTag('strong');">strong</button>
-                        <button class="btn btn-default" (click)="addTag('pre');">pre</button>
+                        <button class="btn btn-default" (mousedown)="addTag('h1');">h1</button>
+                        <button class="btn btn-default" (mousedown)="addTag('h2');">h2</button>
+                        <button class="btn btn-default" (mousedown)="addTag('h3');">h3</button>
+                        <button class="btn btn-default" (mousedown)="addTag('p');">p</button>
+                        <button class="btn btn-default" (mousedown)="addTag('em');">em</button>
+                        <button class="btn btn-default" (mousedown)="addTag('strong');">strong</button>
+                        <button class="btn btn-default" (mousedown)="addTag('pre');">pre</button>
                         <button class="btn btn-default pull-right" (click)="clearNote()">
                             <span class="glyphicon glyphicon-trash"></span></button>
                     </div>
-                    <form (ngSubmit)="saveNote()" [ngFormModel]="noteForm">
+                    <form (ngSubmit)="saveNote()" [formGroup]="noteForm">
                         <div class="form-group">
                             <input type="text" class="form-control" name="noteSubject" placeholder="Subject" required
-                              ngControl="noteSubject"/>
+                              [formControl]="noteForm.controls['noteSubject']"/>
                             <div class="alert alert-danger" role="alert"
-                            [hidden]="!noteSubject.dirty || noteSubject.valid">
+                            [hidden]="!noteForm.controls['noteSubject'].dirty || noteForm.controls['noteSubject'].valid">
                                 <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                                 <span class="sr-only">Error:</span>
                                 Please specify a note subject.
@@ -38,9 +36,9 @@
                         </div>
                         <div class="form-group">
                             <textarea class="form-control" name="noteText" placeholder="Write some text..." required
-                              ngControl="noteText"></textarea>
+                              [formControl]="noteForm.controls['noteText']"></textarea>
                             <div class="alert alert-danger" role="alert"
-                            [hidden]="!noteText.dirty || noteText.valid">
+                            [hidden]="!noteForm.controls['noteText'].dirty || noteForm.controls['noteText'].valid">
                                 <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                                 <span class="sr-only">Error:</span>
                                 Please write a note.
@@ -52,12 +50,12 @@
                 </div>
                 <div class="col-sm-6 col-xs-12">
                     <div class="panel panel-default"
-                    *ngIf='(noteText.value && noteText.value.length) || (noteSubject.value && noteSubject.value.length)'>
+                    *ngIf="(noteForm.controls['noteText'].value && noteForm.controls['noteText'].value.length) || (noteForm.controls['noteSubject'].value && noteForm.controls['noteSubject'].value.length)">
                         <div class="panel-heading">
-                            <span [innerHTML]='noteSubject.value'></span>
+                            <span [innerHTML]="noteForm.controls['noteSubject'].value"></span>
                         </div>
                         <div class="panel-body">
-                            <span [innerHTML]='noteText.value'></span>
+                            <span [innerHTML]="noteForm.controls['noteText'].value"></span>
                         </div>
                     </div>
                 </div>
@@ -65,7 +63,7 @@
             <div *ngIf='notes && notes.length'>
                 <hr />
                 <h2>Saved notes:</h2>
-                <note-component *ngFor='let note of notes' [note]='note' (close)='removeNote($event)'>
+                <note-component *ngFor='let note of notes' [note]='note' (update)='removeNote($event)'>
                 </note-component>
             </div>
         </div>

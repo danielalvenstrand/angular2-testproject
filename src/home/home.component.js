@@ -9,26 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var platform_browser_1 = require('@angular/platform-browser');
-var HeaderComponent = (function () {
-    function HeaderComponent(_title) {
-        this._title = _title;
+var HomeComponent = (function () {
+    function HomeComponent() {
     }
-    HeaderComponent.prototype.setTitle = function (title) {
-        this._title.setTitle(title);
-    };
-    HeaderComponent = __decorate([
+    HomeComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'header-component',
-            templateUrl: 'header.component.html',
-            styleUrls: ['header.component.css'],
-            directives: [router_1.ROUTER_DIRECTIVES]
+            selector: 'home-component',
+            templateUrl: 'home.component.html',
+            styleUrls: ['home.component.css']
         }), 
-        __metadata('design:paramtypes', [platform_browser_1.Title])
-    ], HeaderComponent);
-    return HeaderComponent;
+        __metadata('design:paramtypes', [])
+    ], HomeComponent);
+    return HomeComponent;
 }());
-exports.HeaderComponent = HeaderComponent;
-//# sourceMappingURL=header.component.js.map
+exports.HomeComponent = HomeComponent;
+//# sourceMappingURL=home.component.js.map

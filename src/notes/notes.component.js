@@ -9,22 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var common_1 = require('@angular/common');
+var forms_1 = require('@angular/forms');
 var note_component_1 = require('../shared/note/note.component');
+var selection_service_1 = require('../shared/misc/selection.service');
 var NotesComponent = (function () {
-    function NotesComponent(_fb) {
+    function NotesComponent(_fb, _sel) {
         this._fb = _fb;
+        this._sel = _sel;
         this.componentTitle = 'Notes component';
         this.hide = false;
         this.notes = [];
-        this.noteSubject = new common_1.Control("", common_1.Validators.required);
-        this.noteText = new common_1.Control("", common_1.Validators.required);
         this.noteForm = _fb.group({
-            noteSubject: this.noteSubject,
-            noteText: this.noteText
+            "noteSubject": new forms_1.FormControl("", forms_1.Validators.required),
+            "noteText": new forms_1.FormControl("", forms_1.Validators.required)
         });
     }
     NotesComponent.prototype.ngOnInit = function () {
+        this._sel.selEment = $('[name="noteText"]').get(0);
         console.log(this.componentTitle + " has been loaded.");
     };
     NotesComponent.prototype.toggleHide = function () {
@@ -33,20 +34,21 @@ var NotesComponent = (function () {
     NotesComponent.prototype.saveNote = function () {
         if (this.noteForm.valid) {
             this.notes.push({
-                subject: this.noteSubject.value,
-                text: this.noteText.value,
+                subject: this.noteForm.controls['noteSubject'].value,
+                text: this.noteForm.controls['noteText'].value,
                 date: new Date()
             });
             this.clearNote();
         }
     };
     NotesComponent.prototype.addTag = function (tag) {
-        this.noteText.updateValue(this.noteText.value + "<" + tag + "></" + tag + ">");
+        var val = this._sel.surround(tag);
+        this.noteForm.controls['noteText'].updateValue(val);
     };
     NotesComponent.prototype.clearNote = function () {
         $.each(this.noteForm.controls, function (index, control) {
             control.updateValue('');
-            control.setErrors(null);
+            control['_pristine'] = true;
         });
     };
     NotesComponent.prototype.removeNote = function (note) {
@@ -58,9 +60,11 @@ var NotesComponent = (function () {
             selector: 'notes-component',
             templateUrl: 'notes.component.html',
             styleUrls: ['notes.component.css'],
-            directives: [note_component_1.NoteComponent]
+            directives: [forms_1.FORM_DIRECTIVES, forms_1.REACTIVE_FORM_DIRECTIVES,
+                note_component_1.NoteComponent],
+            providers: [selection_service_1.SelectionService]
         }), 
-        __metadata('design:paramtypes', [common_1.FormBuilder])
+        __metadata('design:paramtypes', [forms_1.FormBuilder, selection_service_1.SelectionService])
     ], NotesComponent);
     return NotesComponent;
 }());

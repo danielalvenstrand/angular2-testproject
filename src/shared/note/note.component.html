@@ -1,8 +1,8 @@
 <div class="col-sm-6 col-xs-12">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <span [innerHTML]='note.subject'></span><span class="close glyphicon glyphicon-remove"
-            (click)='close()'></span>
+            <span [innerHTML]='note.subject'></span><span class="close"
+            (click)='close()'>X</span>
         </div>
         <div class="panel-body">
             <span [innerHTML]='note.text'></span>

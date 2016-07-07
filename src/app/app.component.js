@@ -9,10 +9,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var header_component_1 = require('../header/header.component');
 var footer_component_1 = require('../footer/footer.component');
-var notes_component_1 = require('../notes/notes.component');
-var example_component_1 = require('../example/example.component');
 var AppComponent = (function () {
     function AppComponent() {
     }
@@ -24,7 +23,8 @@ var AppComponent = (function () {
             selector: 'app-component',
             templateUrl: 'app.component.html',
             styleUrls: ['app.component.css'],
-            directives: [header_component_1.HeaderComponent, footer_component_1.FooterComponent, notes_component_1.NotesComponent, example_component_1.ExampleComponent]
+            directives: [router_1.ROUTER_DIRECTIVES,
+                header_component_1.HeaderComponent, footer_component_1.FooterComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

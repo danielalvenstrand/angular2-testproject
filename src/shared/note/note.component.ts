@@ -11,10 +11,10 @@ import { INote } from './note';
 
 export class NoteComponent implements OnInit{
   @Input() note: INote;
-  @Output() noteEvent: EventEmitter<INote>;
+  @Output() update: EventEmitter<INote>;
 
     constructor(){
-      this.noteEvent = new EventEmitter<INote>();
+      this.update = new EventEmitter<INote>();
     }
 
     ngOnInit(): void {
@@ -22,7 +22,7 @@ export class NoteComponent implements OnInit{
     }
 
     close() {
-      this.noteEvent.emit(this.note);
+      this.update.emit(this.note);
     }
 }
 

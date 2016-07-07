@@ -1,40 +1,42 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
-import { Control, ControlGroup, Validators, FormBuilder, NgControlStatus } from '@angular/common';
+import { FORM_DIRECTIVES, REACTIVE_FORM_DIRECTIVES, FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+
 
 import { NoteComponent } from '../shared/note/note.component';
 import { INote } from '../shared/note/note';
+
+import { SelectionService } from '../shared/misc/selection.service';
 
 @Component({
   moduleId: module.id,
   selector: 'notes-component',
   templateUrl: 'notes.component.html',
   styleUrls: ['notes.component.css'],
-  directives: [NoteComponent]
+  directives: [FORM_DIRECTIVES, REACTIVE_FORM_DIRECTIVES,
+              NoteComponent],
+  providers: [SelectionService]
 })
 
 export class NotesComponent implements OnInit{
     componentTitle: string;
     hide: boolean;
     notes:INote[];
+    noteForm: FormGroup;
 
-    noteSubject: Control;
-    noteText: Control;
-    noteForm: ControlGroup;
-
-    constructor(private _fb: FormBuilder){
+    constructor(private _fb: FormBuilder, private _sel: SelectionService){
       this.componentTitle  = 'Notes component';
       this.hide = false;
       this.notes = [];
 
-      this.noteSubject = new Control("",Validators.required);
-       this.noteText = new Control("",Validators.required);
        this.noteForm = _fb.group({
-         noteSubject: this.noteSubject,
-         noteText: this.noteText
+         "noteSubject": new FormControl("",Validators.required),
+         "noteText": new FormControl("",Validators.required)
        });
     }
 
     ngOnInit(): void {
+      this._sel.selEment = $('[name="noteText"]').get(0);
+
       console.log(this.componentTitle+" has been loaded.");
     }
 
@@ -45,8 +47,8 @@ export class NotesComponent implements OnInit{
     saveNote(): void {
       if(this.noteForm.valid){
         this.notes.push({
-          subject:this.noteSubject.value,
-          text:this.noteText.value,
+          subject:this.noteForm.controls['noteSubject'].value,
+          text:this.noteForm.controls['noteText'].value,
           date: new Date()
         });
         this.clearNote();
@@ -54,13 +56,14 @@ export class NotesComponent implements OnInit{
     }
 
     addTag(tag: string): void {
-      this.noteText.updateValue(this.noteText.value+"<"+tag+"></"+tag+">");
+      let val = this._sel.surround(tag);
+      (<FormControl>this.noteForm.controls['noteText']).updateValue(val);
     }
 
     clearNote(): void {
-      $.each(this.noteForm.controls,(index: number, control: Control)=>{
+      $.each(this.noteForm.controls,(index: number, control: FormControl)=>{
         control.updateValue('');
-        control.setErrors(null);
+        control['_pristine']=true;
       });
     }
 

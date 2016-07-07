@@ -11,12 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var NoteComponent = (function () {
     function NoteComponent() {
-        this.noteEvent = new core_1.EventEmitter();
+        this.update = new core_1.EventEmitter();
     }
     NoteComponent.prototype.ngOnInit = function () {
     };
     NoteComponent.prototype.close = function () {
-        this.noteEvent.emit(this.note);
+        this.update.emit(this.note);
     };
     __decorate([
         core_1.Input(), 
@@ -25,7 +25,7 @@ var NoteComponent = (function () {
     __decorate([
         core_1.Output(), 
         __metadata('design:type', core_1.EventEmitter)
-    ], NoteComponent.prototype, "noteEvent", void 0);
+    ], NoteComponent.prototype, "update", void 0);
     NoteComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
