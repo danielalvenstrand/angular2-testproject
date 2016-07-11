@@ -5,6 +5,8 @@ import { FORM_DIRECTIVES, REACTIVE_FORM_DIRECTIVES, FormGroup, FormControl, Form
 import { NoteComponent } from '../shared/note/note.component';
 import { INote } from '../shared/note/note';
 
+import { Configuration } from '../app/app.constants';
+import { NoteService } from './notes.service';
 import { SelectionService } from '../shared/misc/selection.service';
 
 @Component({
@@ -14,7 +16,7 @@ import { SelectionService } from '../shared/misc/selection.service';
   styleUrls: ['notes.component.css'],
   directives: [FORM_DIRECTIVES, REACTIVE_FORM_DIRECTIVES,
               NoteComponent],
-  providers: [SelectionService]
+  providers: [Configuration, NoteService, SelectionService]
 })
 
 export class NotesComponent implements OnInit{
@@ -23,7 +25,7 @@ export class NotesComponent implements OnInit{
     notes:INote[];
     noteForm: FormGroup;
 
-    constructor(private _fb: FormBuilder, private _sel: SelectionService){
+    constructor(private _fb: FormBuilder, private _ns: NoteService, private _ss: SelectionService){
       this.componentTitle  = 'Notes component';
       this.hide = false;
       this.notes = [];
@@ -35,7 +37,9 @@ export class NotesComponent implements OnInit{
     }
 
     ngOnInit(): void {
-      this._sel.selEment = $('[name="noteText"]').get(0);
+      this.populateNotes();
+
+      this._ss.selEment = $('[name="noteText"]').get(0);
 
       console.log(this.componentTitle+" has been loaded.");
     }
@@ -44,19 +48,36 @@ export class NotesComponent implements OnInit{
       this.hide=!this.hide;
     }
 
+    populateNotes(): void {
+      this._ns
+            .GetAll()
+            .subscribe((data:INote[]) => this.notes = data,
+                error => console.log(error),
+                () => console.log('Get all Notes complete'));
+    }
+
     saveNote(): void {
       if(this.noteForm.valid){
-        this.notes.push({
-          subject:this.noteForm.controls['noteSubject'].value,
-          text:this.noteForm.controls['noteText'].value,
-          date: new Date()
-        });
-        this.clearNote();
+        this._ns.Add(
+          this.noteForm.controls['noteSubject'].value,
+          this.noteForm.controls['noteText'].value
+        ).subscribe((data) => console.log(data.message),
+                error => console.log(error),
+                () => {
+                  this.clearNote();
+                  this.populateNotes();
+                });
       }
     }
 
+    removeNote(note:INote): void {
+      this._ns.Delete(note).subscribe((data) => console.log(JSON.parse(data._body).message),
+                error => console.log(error),
+                () => this.populateNotes());
+    }
+
     addTag(tag: string): void {
-      let val = this._sel.surround(tag);
+      let val = this._ss.surround(tag);
       (<FormControl>this.noteForm.controls['noteText']).updateValue(val);
     }
 
@@ -65,10 +86,6 @@ export class NotesComponent implements OnInit{
         control.updateValue('');
         control['_pristine']=true;
       });
-    }
-
-    removeNote(note:INote): void {
-      this.notes.splice(this.notes.indexOf(note),1);
     }
 
 }
