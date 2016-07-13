@@ -61,7 +61,7 @@ export class NotesComponent implements OnInit{
         this._ns.Add(
           this.noteForm.controls['noteSubject'].value,
           this.noteForm.controls['noteText'].value
-        ).subscribe((data) => console.log(data.message),
+        ).subscribe((data) => {},
                 error => console.log(error),
                 () => {
                   this.clearNote();
@@ -71,7 +71,7 @@ export class NotesComponent implements OnInit{
     }
 
     removeNote(note:INote): void {
-      this._ns.Delete(note).subscribe((data) => console.log(JSON.parse(data._body).message),
+      this._ns.Delete(note).subscribe((data) => {},
                 error => console.log(error),
                 () => this.populateNotes());
     }

@@ -4,3 +4,4 @@ typings
 src/**/*.js
 *.js.map
 *.css
+npm-debug*
