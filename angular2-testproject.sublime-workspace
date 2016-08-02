@@ -131,18 +131,7 @@
 			"file": "src/notes/notes.component.ts",
 			"settings":
 			{
-				"buffer_size": 2754,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "0 info it worked if it ends with ok\n1 verbose cli [ 'C:\\\\Program Files\\\\nodejs\\\\node.exe',\n1 verbose cli   'C:\\\\Users\\\\dalvenst\\\\AppData\\\\Roaming\\\\npm\\\\node_modules\\\\npm\\\\bin\\\\npm-cli.js',\n1 verbose cli   'run',\n1 verbose cli   'tsc:w' ]\n2 info using npm@3.10.3\n3 info using node@v6.2.2\n4 verbose run-script [ 'pretsc:w', 'tsc:w', 'posttsc:w' ]\n5 info lifecycle angular2-testproject@1.0.0~pretsc:w: angular2-testproject@1.0.0\n6 silly lifecycle angular2-testproject@1.0.0~pretsc:w: no script for pretsc:w, continuing\n7 info lifecycle angular2-testproject@1.0.0~tsc:w: angular2-testproject@1.0.0\n8 verbose lifecycle angular2-testproject@1.0.0~tsc:w: unsafe-perm in lifecycle true\n9 verbose lifecycle angular2-testproject@1.0.0~tsc:w: PATH: C:\\Users\\dalvenst\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\node-gyp-bin;D:\\Git\\angular2-testproject\\node_modules\\.bin;C:\\Program Files\\nodejs;C:\\Users\\dalvenst\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\node-gyp-bin;D:\\Git\\angular2-testproject\\node_modules\\.bin;C:\\Program Files\\nodejs;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Users\\dalvenst\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Amazon\\AWSCLI\\;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Sophos\\Sophos SSL VPN Client\\bin;C:\\Users\\dalvenst\\AppData\\Roaming\\npm\n10 verbose lifecycle angular2-testproject@1.0.0~tsc:w: CWD: D:\\Git\\angular2-testproject\n11 silly lifecycle angular2-testproject@1.0.0~tsc:w: Args: [ '/d /s /c', 'tsc -w' ]\n12 silly lifecycle angular2-testproject@1.0.0~tsc:w: Returned: code: 3221225786  signal: null\n13 info lifecycle angular2-testproject@1.0.0~tsc:w: Failed to exec tsc:w script\n14 verbose stack Error: angular2-testproject@1.0.0 tsc:w: `tsc -w`\n14 verbose stack Exit status 3221225786\n14 verbose stack     at EventEmitter.<anonymous> (C:\\Users\\dalvenst\\AppData\\Roaming\\npm\\node_modules\\npm\\lib\\utils\\lifecycle.js:242:16)\n14 verbose stack     at emitTwo (events.js:106:13)\n14 verbose stack     at EventEmitter.emit (events.js:191:7)\n14 verbose stack     at ChildProcess.<anonymous> (C:\\Users\\dalvenst\\AppData\\Roaming\\npm\\node_modules\\npm\\lib\\utils\\spawn.js:40:14)\n14 verbose stack     at emitTwo (events.js:106:13)\n14 verbose stack     at ChildProcess.emit (events.js:191:7)\n14 verbose stack     at maybeClose (internal/child_process.js:852:16)\n14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:215:5)\n15 verbose pkgid angular2-testproject@1.0.0\n16 verbose cwd D:\\Git\\angular2-testproject\n17 error Windows_NT 6.1.7601\n18 error argv \"C:\\\\Program Files\\\\nodejs\\\\node.exe\" \"C:\\\\Users\\\\dalvenst\\\\AppData\\\\Roaming\\\\npm\\\\node_modules\\\\npm\\\\bin\\\\npm-cli.js\" \"run\" \"tsc:w\"\n19 error node v6.2.2\n20 error npm  v3.10.3\n21 error code ELIFECYCLE\n22 error angular2-testproject@1.0.0 tsc:w: `tsc -w`\n22 error Exit status 3221225786\n23 error Failed at the angular2-testproject@1.0.0 tsc:w script 'tsc -w'.\n23 error Make sure you have the latest version of node.js and npm installed.\n23 error If you do, this is most likely a problem with the angular2-testproject package,\n23 error not with npm itself.\n23 error Tell the author that this fails on your system:\n23 error     tsc -w\n23 error You can get information on how to open an issue for this project with:\n23 error     npm bugs angular2-testproject\n23 error Or if that isn't available, you can get their info via:\n23 error     npm owner ls angular2-testproject\n23 error There is likely additional logging output above.\n24 verbose exit [ 1, true ]\n",
-			"file": "npm-debug.log",
-			"file_size": 4118,
-			"file_write_time": 131127196283424332,
-			"settings":
-			{
-				"buffer_size": 4070,
+				"buffer_size": 2690,
 				"line_ending": "Windows"
 			}
 		},
@@ -259,6 +248,17 @@
 			{
 				"buffer_size": 59,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Package Control Messages\n========================\n\nBoxy Theme\n----------\n\n  👓 Version 3.0.0\n  ===========================================================================\n  \n  All renamed and new options can be found here: https://github.com/oivva/boxy/wiki/v3.0.0.\n  There aren't many breaking changes.\n  \n  💅 Themes\n  -------------------\n  \n  ↪ Add new accents\n  ↪ Add alternative ui icons\n  ↪ Review all file icons\n  ↪ Add sidebar indent options\n  ↪ Make top bar monochrome by default\n  ↪ Add new flavors of the bar logo\n  ↪ Add rounded scrollbar variant\n  ↪ Add optional sidebar disclosure buttons\n  ↪ Add colored status bar variant\n  ↪ Change quick panel & autocomplete highlighted background by default\n  ↪ Fix assets of the scrollbar line variant\n  ↪ Disable line highlight in widgets\n  ↪ Disable margin top when active bar option\n  ↪ Improve colored bar colors\n  ↪ Make loader monochrome\n  ↪ Make sidebar title font regular by default\n  ↪ Reduce theme size\n  ↪ Fix default size of the tooltips\n  ↪ Fix tab separator styles\n  ↪ Fix issue when tabs do not shrink enough when tab scrolling is disabled\n  ↪ Fix widget colors\n  \n  💅 Color Schemes\n  -------------------\n  \n  ↪ Add popup styles\n  ↪ Fix arguments are of the same color as functions\n  ↪ Fix highlighting on blocks with background color\n  ↪ Change colors of the guides\n  ↪ Improve json highlighting\n  ↪ Make cursor color the same as default foreground\n  \n  And many more exciting improvements and enhancements!\n  See full change log: https://github.com/oivva/boxy/blob/master/CHANGELOG.md\n  \n  👍 Many thanks to\n  -------------------\n  \n  @Lugoues for 5a90c95 & 1ece0df\n  @sbine for 33309d7\n",
+			"settings":
+			{
+				"buffer_size": 1654,
+				"line_ending": "Windows",
+				"name": "Package Control Messages",
+				"read_only": true,
+				"scratch": true
 			}
 		},
 		{
@@ -385,6 +385,14 @@
 			}
 		},
 		{
+			"file": "assets/scripts/facebook.js",
+			"settings":
+			{
+				"buffer_size": 2809,
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "src/home/home.component.html",
 			"settings":
 			{
@@ -409,11 +417,22 @@
 			}
 		},
 		{
+			"contents": "import { Injectable } from '@angular/core';\nimport { Http, Response, Headers } from '@angular/http';\nimport 'rxjs/add/operator/map'\nimport { Observable } from 'rxjs/Rx';\nimport { INote } from '../shared/note/note';\nimport { Configuration } from '../app/app.constants';\n\n@Injectable()\nexport class NoteService {\n\n    private actionUrl: string;\n    private headers: Headers;\n\n    constructor(private _http: Http, private _configuration: Configuration) {\n\n        this.actionUrl = _configuration.ServerWithApiUrl + 'note';\n\n        this.headers = new Headers();\n        this.headers.append('Content-Type', 'application/json');\n        //this.headers.append('Accept', 'application/json');\n    }\n\n    public GetAll = (): Observable<INote[]> => {\n        return this._http.get(this.actionUrl)\n            .map((response: Response) => <INote[]>response.json())\n            .catch(this.handleError);\n    }\n\n    /*public GetSingle = (id: number): Observable<INote> => {\n        return this._http.get(this.actionUrl + id)\n            .map((response: Response) => <INote>response.json())\n            .catch(this.handleError);\n    }*/\n\n    public Add = (subject: string, text: string): Observable<INote> => {\n        let toAdd = JSON.stringify({ subject: subject, text: text });\n        return this._http.post(this.actionUrl, toAdd, { headers: this.headers })\n            .map((response: Response) => <INote>response.json())\n            .catch(this.handleError);\n    }\n\n    public Update = (note: INote): Observable<INote> => {\n        return this._http.put(this.actionUrl + \"/\" + note.id, JSON.stringify({ subject: note.subject, text: note.text }), { headers: this.headers })\n            .map((response: Response) => <INote>response.json())\n            .catch(this.handleError);\n    }\n\n    public Delete = (note: INote): Observable<Response> => {\n        return this._http.delete(this.actionUrl + \"/\" + note.id)\n            .catch(this.handleError);\n    }\n\n    private handleError(error: Response) {\n        console.error(error);\n        return Observable.throw(error.json().error || 'Server error');\n    }\n}",
 			"file": "src/notes/notes.service.ts",
+			"file_size": 2153,
+			"file_write_time": 131127181682122499,
 			"settings":
 			{
 				"buffer_size": 2097,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Git/testmedaxel/package.json",
+			"settings":
+			{
+				"buffer_size": 560,
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -518,8 +537,11 @@
 		"/D/Git/angular2-testproject",
 		"/D/Git/angular2-testproject/assets",
 		"/D/Git/angular2-testproject/assets/scripts",
+		"/D/Git/angular2-testproject/assets/styles",
 		"/D/Git/angular2-testproject/src",
 		"/D/Git/angular2-testproject/src/app",
+		"/D/Git/angular2-testproject/src/header",
+		"/D/Git/angular2-testproject/src/home",
 		"/D/Git/angular2-testproject/src/notes",
 		"/D/Git/angular2-testproject/src/shared",
 		"/D/Git/angular2-testproject/src/shared/note"
@@ -689,7 +711,7 @@
 	"groups":
 	[
 		{
-			"selected": 16,
+			"selected": 37,
 			"sheets":
 			[
 				{
@@ -705,12 +727,13 @@
 						"selection":
 						[
 							[
-								555,
-								555
+								4206,
+								4206
 							]
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true,
@@ -722,10 +745,10 @@
 							}
 						},
 						"translation.x": 0.0,
-						"translation.y": 961.0,
+						"translation.y": 817.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
@@ -734,61 +757,34 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2754,
+						"buffer_size": 2690,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2185,
-								2185
+								1651,
+								1651
 							]
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true,
 							"use_tab_stops": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 939.0,
+						"translation.y": 520.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "npm-debug.log",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 4070,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "src/shared/misc/selection.service.ts",
 					"semi_transient": false,
 					"settings":
@@ -806,6 +802,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"open_with_edit": true,
 							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
 							"tab_size": 4,
@@ -816,11 +813,11 @@
 						"translation.y": 120.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 31,
+					"stack_index": 34,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 3,
 					"file": "src/example/example.component.html",
 					"semi_transient": false,
 					"settings":
@@ -838,17 +835,18 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 37,
+					"stack_index": 39,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 4,
 					"file": "src/main.ts",
 					"semi_transient": false,
 					"settings":
@@ -866,6 +864,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
 							"use_tab_stops": false
 						},
@@ -873,11 +872,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 5,
 					"file": "src/shared/note/note.ts",
 					"semi_transient": false,
 					"settings":
@@ -889,12 +888,13 @@
 						"selection":
 						[
 							[
-								40,
-								40
+								91,
+								91
 							]
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
 							"use_tab_stops": false
 						},
@@ -902,11 +902,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 6,
 					"file": "src/shared/note/note.component.html",
 					"semi_transient": false,
 					"settings":
@@ -924,6 +924,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"open_with_edit": true,
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
@@ -933,11 +934,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 7,
 					"file": "src/app/app.component.ts",
 					"semi_transient": false,
 					"settings":
@@ -955,6 +956,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
 							"translate_tabs_to_spaces": false,
 							"typescript_plugin_format_options":
@@ -969,11 +971,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 33,
+					"stack_index": 36,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 8,
 					"file": "src/header/header.component.ts",
 					"semi_transient": false,
 					"settings":
@@ -991,6 +993,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
 							"use_tab_stops": false
 						},
@@ -998,11 +1001,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 29,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 9,
 					"file": "src/app/app.routes.ts",
 					"semi_transient": false,
 					"settings":
@@ -1020,6 +1023,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
 							"use_tab_stops": false
 						},
@@ -1027,11 +1031,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 26,
+					"stack_index": 32,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 10,
 					"file": "src/shared/note/note.component.ts",
 					"semi_transient": false,
 					"settings":
@@ -1049,6 +1053,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"open_with_edit": true,
 							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
 							"tab_size": 2,
@@ -1065,11 +1070,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 11,
 					"file": "index.html",
 					"semi_transient": false,
 					"settings":
@@ -1087,6 +1092,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
@@ -1095,11 +1101,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 32,
+					"stack_index": 35,
 					"type": "text"
 				},
 				{
-					"buffer": 13,
+					"buffer": 12,
 					"file": "src/shared/note/note.component.scss",
 					"semi_transient": false,
 					"settings":
@@ -1117,6 +1123,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"open_with_edit": true,
 							"syntax": "Packages/sass-textmate-bundle/Syntaxes/Sass.tmLanguage"
 						},
@@ -1124,11 +1131,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 30,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 14,
+					"buffer": 13,
 					"file": "src/app/app.component.scss",
 					"semi_transient": false,
 					"settings":
@@ -1146,17 +1153,18 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"syntax": "Packages/sass-textmate-bundle/Syntaxes/Sass.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 22,
+					"stack_index": 31,
 					"type": "text"
 				},
 				{
-					"buffer": 15,
+					"buffer": 14,
 					"file": "angular2-testproject.sublime-project",
 					"semi_transient": false,
 					"settings":
@@ -1168,12 +1176,13 @@
 						"selection":
 						[
 							[
-								193,
-								193
+								148,
+								148
 							]
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": false
@@ -1182,11 +1191,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
-					"buffer": 16,
+					"buffer": 15,
 					"file": ".gitignore",
 					"semi_transient": false,
 					"settings":
@@ -1204,6 +1213,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"syntax": "Packages/Text/Plain text.tmLanguage",
 							"typescript_plugin_format_options":
 							{
@@ -1216,7 +1226,38 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 18,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1654,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								341,
+								341
+							]
+						],
+						"settings":
+						{
+							"auto_indent": false,
+							"default_dir": "D:\\Git\\angular2-testproject",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_width": 2,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
@@ -1238,6 +1279,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"open_with_edit": true,
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
@@ -1245,7 +1287,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 23,
 					"type": "text"
 				},
 				{
@@ -1267,6 +1309,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"open_with_edit": true,
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 2,
@@ -1276,7 +1319,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 22,
 					"type": "text"
 				},
 				{
@@ -1298,6 +1341,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"open_with_edit": true,
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 4,
@@ -1307,7 +1351,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 24,
 					"type": "text"
 				},
 				{
@@ -1329,6 +1373,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"open_with_edit": true,
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 2,
@@ -1338,7 +1383,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 26,
 					"type": "text"
 				},
 				{
@@ -1360,6 +1405,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"open_with_edit": true,
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 2,
@@ -1369,7 +1415,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 18,
+					"stack_index": 27,
 					"type": "text"
 				},
 				{
@@ -1391,6 +1437,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"syntax": "Packages/sass-textmate-bundle/Syntaxes/Sass.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true,
@@ -1405,7 +1452,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 34,
+					"stack_index": 37,
 					"type": "text"
 				},
 				{
@@ -1427,13 +1474,14 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"syntax": "Packages/sass-textmate-bundle/Syntaxes/Sass.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 27,
+					"stack_index": 33,
 					"type": "text"
 				},
 				{
@@ -1449,12 +1497,13 @@
 						"selection":
 						[
 							[
-								38,
-								0
+								58,
+								58
 							]
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"syntax": "Packages/sass-textmate-bundle/Syntaxes/Sass.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true,
@@ -1466,10 +1515,10 @@
 							}
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 468.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 36,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
@@ -1486,18 +1535,19 @@
 						[
 							[
 								710,
-								710
+								113
 							]
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"syntax": "Packages/sass-textmate-bundle/Syntaxes/Sass.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 25,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
@@ -1519,6 +1569,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"syntax": "Packages/sass-textmate-bundle/Syntaxes/Sass.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
@@ -1526,7 +1577,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 35,
+					"stack_index": 38,
 					"type": "text"
 				},
 				{
@@ -1548,13 +1599,14 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 38,
+					"stack_index": 40,
 					"type": "text"
 				},
 				{
@@ -1570,12 +1622,13 @@
 						"selection":
 						[
 							[
-								181,
-								181
+								99,
+								99
 							]
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"typescript_plugin_format_options":
 							{
@@ -1588,7 +1641,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 23,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -1610,6 +1663,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true,
@@ -1624,7 +1678,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 28,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
@@ -1646,6 +1700,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"open_with_edit": true,
 							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
 							"use_tab_stops": false
@@ -1654,7 +1709,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 21,
+					"stack_index": 30,
 					"type": "text"
 				},
 				{
@@ -1676,6 +1731,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"open_with_edit": true,
 							"syntax": "Packages/sass-textmate-bundle/Syntaxes/Sass.tmLanguage"
 						},
@@ -1683,11 +1739,41 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 24,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
 					"buffer": 32,
+					"file": "assets/scripts/facebook.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 2809,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 33,
 					"file": "src/home/home.component.html",
 					"semi_transient": false,
 					"settings":
@@ -1705,6 +1791,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"open_with_edit": true,
 							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
@@ -1712,11 +1799,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 20,
+					"stack_index": 29,
 					"type": "text"
 				},
 				{
-					"buffer": 33,
+					"buffer": 34,
 					"file": "package.json",
 					"semi_transient": false,
 					"settings":
@@ -1734,6 +1821,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
@@ -1742,11 +1830,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 20,
 					"type": "text"
 				},
 				{
-					"buffer": 34,
+					"buffer": 35,
 					"file": "src/app/app.constants.ts",
 					"semi_transient": false,
 					"settings":
@@ -1764,6 +1852,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"open_with_edit": true,
 							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
 							"use_tab_stops": false
@@ -1772,11 +1861,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 35,
+					"buffer": 36,
 					"file": "src/notes/notes.service.ts",
 					"semi_transient": false,
 					"settings":
@@ -1788,12 +1877,13 @@
 						"selection":
 						[
 							[
-								1191,
-								1184
+								1011,
+								1011
 							]
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"open_with_edit": true,
 							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
 							"tab_size": 4,
@@ -1801,14 +1891,44 @@
 							"use_tab_stops": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 338.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 36,
+					"buffer": 37,
+					"file": "/D/Git/testmedaxel/package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 560,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 38,
 					"file": "/D/Git/angular2testprojectdb/package.json",
 					"semi_transient": false,
 					"settings":
@@ -1826,6 +1946,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
@@ -1834,11 +1955,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 25,
 					"type": "text"
 				},
 				{
-					"buffer": 37,
+					"buffer": 39,
 					"file": "systemjs.config.js",
 					"semi_transient": false,
 					"settings":
@@ -1856,6 +1977,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
@@ -1864,11 +1986,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 19,
+					"stack_index": 28,
 					"type": "text"
 				},
 				{
-					"buffer": 38,
+					"buffer": 40,
 					"file": "typings.json",
 					"semi_transient": false,
 					"settings":
@@ -1886,13 +2008,14 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 21,
 					"type": "text"
 				}
 			]
