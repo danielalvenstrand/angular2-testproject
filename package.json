@@ -49,5 +49,8 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/danielalvenstrand/angular2-testproject.git"
+  },
+  "config": {
+    "unsafe-perm":true
   }
 }
