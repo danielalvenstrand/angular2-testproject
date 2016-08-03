@@ -1,0 +1,10 @@
+<div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="place-box" #placeBox [style.background-color]='place.bgClr'>
+        <img [src]="place.imgSrc" />
+            <span class="name" [style.color]='place.txtClr'>
+                <p>{{place.name}}</p>
+                <br />
+                <star-component [rating]='place.rating'></star-component>
+            </span>
+    </div>
+</div>

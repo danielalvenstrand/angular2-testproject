@@ -120,10 +120,44 @@
 	"buffers":
 	[
 		{
-			"file": "src/notes/notes.component.html",
+			"file": "src/forfest/forfest.component.scss",
 			"settings":
 			{
-				"buffer_size": 4333,
+				"buffer_size": 37,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/forfest/forfest.component.ts",
+			"settings":
+			{
+				"buffer_size": 455,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/forfest/place.ts",
+			"settings":
+			{
+				"buffer_size": 61,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Searching 17142 files for \"INote\"\n\nD:\\Git\\angular2-testproject\\node_modules\\node-gyp\\src\\win_delay_load_hook.cc:\n   21  static FARPROC WINAPI load_exe_hook(unsigned int event, DelayLoadInfo* info) {\n   22    HMODULE m;\n   23:   if (event != dliNotePreLoadLibrary)\n   24      return NULL;\n   25  \n\nD:\\Git\\angular2-testproject\\src\\notes\\notes.component.ts:\n    5  \n    6  import { NoteComponent } from '../shared/note/note.component';\n    7: import { Note } from '../shared/note/note';\n    8  \n    9  import { Configuration } from '../app/app.constants';\n   ..\n   24      componentTitle: string;\n   25      hide: boolean;\n   26:     notes:Note[];\n   27      noteForm: FormGroup;\n   28  \n   ..\n   53        this._ns\n   54              .GetAll()\n   55:             .subscribe((data:Note[]) => this.notes = data,\n   56                  error => console.log(error),\n   57                  () => console.log('Get all Notes complete'));\n   ..\n   72      }\n   73  \n   74:     removeNote(note:Note): void {\n   75        this._ns.Delete(note).subscribe((data) => {},\n   76                  error => console.log(error),\n\nD:\\Git\\angular2-testproject\\src\\notes\\notes.service.js:\n   24                  .catch(_this.handleError);\n   25          };\n   26:         /*public GetSingle = (id: number): Observable<Note> => {\n   27              return this._http.get(this.actionUrl + id)\n   28:                 .map((response: Response) => <Note>response.json())\n   29                  .catch(this.handleError);\n   30          }*/\n\nD:\\Git\\angular2-testproject\\src\\notes\\notes.service.ts:\n    3  import 'rxjs/add/operator/map'\n    4  import { Observable } from 'rxjs/Rx';\n    5: import { Note } from '../shared/note/note';\n    6  import { Configuration } from '../app/app.constants';\n    7  \n    .\n   21      }\n   22  \n   23:     public GetAll = (): Observable<Note[]> => {\n   24          return this._http.get(this.actionUrl)\n   25:             .map((response: Response) => <Note[]>response.json())\n   26              .catch(this.handleError);\n   27      }\n   28  \n   29:     /*public GetSingle = (id: number): Observable<INote> => {\n   30          return this._http.get(this.actionUrl + id)\n   31:             .map((response: Response) => <INote>response.json())\n   32              .catch(this.handleError);\n   33      }*/\n   34  \n   35:     public Add = (subject: string, text: string): Observable<INote> => {\n   36          let toAdd = JSON.stringify({ subject: subject, text: text });\n   37          return this._http.post(this.actionUrl, toAdd, { headers: this.headers })\n   38:             .map((response: Response) => <INote>response.json())\n   39              .catch(this.handleError);\n   40      }\n   41  \n   42:     public Update = (note: INote): Observable<INote> => {\n   43          return this._http.put(this.actionUrl + \"/\" + note.id, JSON.stringify({ subject: note.subject, text: note.text }), { headers: this.headers })\n   44:             .map((response: Response) => <INote>response.json())\n   45              .catch(this.handleError);\n   46      }\n   47  \n   48:     public Delete = (note: INote): Observable<Response> => {\n   49          return this._http.delete(this.actionUrl + \"/\" + note.id)\n   50              .catch(this.handleError);\n\nD:\\Git\\angular2-testproject\\src\\shared\\note\\note.component.ts:\n    1  import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\n    2  \n    3: import { INote } from './note';\n    4  \n    5  @Component({\n    .\n   11  \n   12  export class NoteComponent implements OnInit{\n   13:   @Input() note: INote;\n   14:   @Output() update: EventEmitter<INote>;\n   15  \n   16      constructor(){\n   17:       this.update = new EventEmitter<INote>();\n   18      }\n   19  \n\nD:\\Git\\angular2-testproject\\src\\shared\\note\\note.ts:\n    1: export interface INote {\n    2      id: number;\n    3      subject: string;\n\n23 matches across 6 files\n",
+			"settings":
+			{
+				"buffer_size": 3883,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "src/notes/notes.service.ts",
+			"settings":
+			{
+				"buffer_size": 2097,
 				"line_ending": "Windows"
 			}
 		},
@@ -131,31 +165,7 @@
 			"file": "src/notes/notes.component.ts",
 			"settings":
 			{
-				"buffer_size": 2690,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/shared/misc/selection.service.ts",
-			"settings":
-			{
-				"buffer_size": 1545,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/example/example.component.html",
-			"settings":
-			{
-				"buffer_size": 197,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/main.ts",
-			"settings":
-			{
-				"buffer_size": 554,
+				"buffer_size": 2719,
 				"line_ending": "Windows"
 			}
 		},
@@ -168,41 +178,6 @@
 			}
 		},
 		{
-			"file": "src/shared/note/note.component.html",
-			"settings":
-			{
-				"buffer_size": 482,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "import { Component, OnInit } from '@angular/core';\nimport { ROUTER_DIRECTIVES } from '@angular/router';\n\nimport { HeaderComponent } from '../header/header.component';\nimport { FooterComponent } from '../footer/footer.component';\n\n@Component({\n	moduleId: module.id,\n	selector: 'app-component',\n	templateUrl: 'app.component.html',\n	styleUrls: ['app.component.css'],\n	directives: [ROUTER_DIRECTIVES,\n				HeaderComponent,FooterComponent]\n})\n\nexport class AppComponent implements OnInit{\n	constructor(){\n	}\n\n	ngOnInit(){\n	}\n}\n\n",
-			"file": "src/app/app.component.ts",
-			"file_size": 545,
-			"file_write_time": 131123518704400880,
-			"settings":
-			{
-				"buffer_size": 522,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/header/header.component.ts",
-			"settings":
-			{
-				"buffer_size": 487,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/app/app.routes.ts",
-			"settings":
-			{
-				"buffer_size": 552,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "src/shared/note/note.component.ts",
 			"settings":
 			{
@@ -211,152 +186,26 @@
 			}
 		},
 		{
-			"file": "index.html",
+			"file": "src/app/app.routes.ts",
 			"settings":
 			{
-				"buffer_size": 891,
+				"buffer_size": 669,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/shared/note/note.component.scss",
+			"file": "src/forfest/forfest.component.html",
 			"settings":
 			{
-				"buffer_size": 38,
+				"buffer_size": 165,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/app/app.component.scss",
+			"file": "assets/json/places.json",
 			"settings":
 			{
-				"buffer_size": 195,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "angular2-testproject.sublime-project",
-			"settings":
-			{
-				"buffer_size": 203,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": ".gitignore",
-			"settings":
-			{
-				"buffer_size": 59,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "Package Control Messages\n========================\n\nBoxy Theme\n----------\n\n  👓 Version 3.0.0\n  ===========================================================================\n  \n  All renamed and new options can be found here: https://github.com/oivva/boxy/wiki/v3.0.0.\n  There aren't many breaking changes.\n  \n  💅 Themes\n  -------------------\n  \n  ↪ Add new accents\n  ↪ Add alternative ui icons\n  ↪ Review all file icons\n  ↪ Add sidebar indent options\n  ↪ Make top bar monochrome by default\n  ↪ Add new flavors of the bar logo\n  ↪ Add rounded scrollbar variant\n  ↪ Add optional sidebar disclosure buttons\n  ↪ Add colored status bar variant\n  ↪ Change quick panel & autocomplete highlighted background by default\n  ↪ Fix assets of the scrollbar line variant\n  ↪ Disable line highlight in widgets\n  ↪ Disable margin top when active bar option\n  ↪ Improve colored bar colors\n  ↪ Make loader monochrome\n  ↪ Make sidebar title font regular by default\n  ↪ Reduce theme size\n  ↪ Fix default size of the tooltips\n  ↪ Fix tab separator styles\n  ↪ Fix issue when tabs do not shrink enough when tab scrolling is disabled\n  ↪ Fix widget colors\n  \n  💅 Color Schemes\n  -------------------\n  \n  ↪ Add popup styles\n  ↪ Fix arguments are of the same color as functions\n  ↪ Fix highlighting on blocks with background color\n  ↪ Change colors of the guides\n  ↪ Improve json highlighting\n  ↪ Make cursor color the same as default foreground\n  \n  And many more exciting improvements and enhancements!\n  See full change log: https://github.com/oivva/boxy/blob/master/CHANGELOG.md\n  \n  👍 Many thanks to\n  -------------------\n  \n  @Lugoues for 5a90c95 & 1ece0df\n  @sbine for 33309d7\n",
-			"settings":
-			{
-				"buffer_size": 1654,
-				"line_ending": "Windows",
-				"name": "Package Control Messages",
-				"read_only": true,
-				"scratch": true
-			}
-		},
-		{
-			"file": "/D/Git/angular2testprojectdb/app.js",
-			"settings":
-			{
-				"buffer_size": 405,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/Git/angular2testprojectdb/connection.js",
-			"settings":
-			{
-				"buffer_size": 664,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/Git/angular2testprojectdb/models/note.js",
-			"settings":
-			{
-				"buffer_size": 1527,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/Git/angular2testprojectdb/routes.js",
-			"settings":
-			{
-				"buffer_size": 963,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "module.exports = function (grunt) {\n  grunt.initConfig({\n    execute: {\n      target: {\n        src: ['app.js']\n      }\n    },\n    watch: {\n      scripts: {\n        files: ['app.js'],\n        tasks: ['execute'],\n      },\n    }\n  });\n\n  grunt.loadNpmTasks('grunt-contrib-watch');\n  grunt.loadNpmTasks('grunt-execute');\n};",
-			"file": "/D/Git/angular2testprojectdb/Gruntfile.js",
-			"file_size": 337,
-			"file_write_time": 131123734348485361,
-			"settings":
-			{
-				"buffer_size": 320,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/example/example.component.scss",
-			"settings":
-			{
-				"buffer_size": 605,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/header/header.component.scss",
-			"settings":
-			{
-				"buffer_size": 191,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/notes/notes.component.scss",
-			"settings":
-			{
-				"buffer_size": 734,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "assets/styles/_master.scss",
-			"settings":
-			{
-				"buffer_size": 710,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/footer/footer.component.scss",
-			"settings":
-			{
-				"buffer_size": 239,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/footer/footer.component.html",
-			"settings":
-			{
-				"buffer_size": 95,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/app/app.component.html",
-			"settings":
-			{
-				"buffer_size": 181,
+				"buffer_size": 131,
 				"line_ending": "Windows"
 			}
 		},
@@ -364,99 +213,8 @@
 			"file": "src/header/header.component.html",
 			"settings":
 			{
-				"buffer_size": 675,
+				"buffer_size": 777,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/home/home.component.ts",
-			"settings":
-			{
-				"buffer_size": 225,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/home/home.component.scss",
-			"settings":
-			{
-				"buffer_size": 37,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "assets/scripts/facebook.js",
-			"settings":
-			{
-				"buffer_size": 2809,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/home/home.component.html",
-			"settings":
-			{
-				"buffer_size": 48,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "package.json",
-			"settings":
-			{
-				"buffer_size": 1554,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/app.constants.ts",
-			"settings":
-			{
-				"buffer_size": 236,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "import { Injectable } from '@angular/core';\nimport { Http, Response, Headers } from '@angular/http';\nimport 'rxjs/add/operator/map'\nimport { Observable } from 'rxjs/Rx';\nimport { INote } from '../shared/note/note';\nimport { Configuration } from '../app/app.constants';\n\n@Injectable()\nexport class NoteService {\n\n    private actionUrl: string;\n    private headers: Headers;\n\n    constructor(private _http: Http, private _configuration: Configuration) {\n\n        this.actionUrl = _configuration.ServerWithApiUrl + 'note';\n\n        this.headers = new Headers();\n        this.headers.append('Content-Type', 'application/json');\n        //this.headers.append('Accept', 'application/json');\n    }\n\n    public GetAll = (): Observable<INote[]> => {\n        return this._http.get(this.actionUrl)\n            .map((response: Response) => <INote[]>response.json())\n            .catch(this.handleError);\n    }\n\n    /*public GetSingle = (id: number): Observable<INote> => {\n        return this._http.get(this.actionUrl + id)\n            .map((response: Response) => <INote>response.json())\n            .catch(this.handleError);\n    }*/\n\n    public Add = (subject: string, text: string): Observable<INote> => {\n        let toAdd = JSON.stringify({ subject: subject, text: text });\n        return this._http.post(this.actionUrl, toAdd, { headers: this.headers })\n            .map((response: Response) => <INote>response.json())\n            .catch(this.handleError);\n    }\n\n    public Update = (note: INote): Observable<INote> => {\n        return this._http.put(this.actionUrl + \"/\" + note.id, JSON.stringify({ subject: note.subject, text: note.text }), { headers: this.headers })\n            .map((response: Response) => <INote>response.json())\n            .catch(this.handleError);\n    }\n\n    public Delete = (note: INote): Observable<Response> => {\n        return this._http.delete(this.actionUrl + \"/\" + note.id)\n            .catch(this.handleError);\n    }\n\n    private handleError(error: Response) {\n        console.error(error);\n        return Observable.throw(error.json().error || 'Server error');\n    }\n}",
-			"file": "src/notes/notes.service.ts",
-			"file_size": 2153,
-			"file_write_time": 131127181682122499,
-			"settings":
-			{
-				"buffer_size": 2097,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/Git/testmedaxel/package.json",
-			"settings":
-			{
-				"buffer_size": 560,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/D/Git/angular2testprojectdb/package.json",
-			"settings":
-			{
-				"buffer_size": 286,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "systemjs.config.js",
-			"settings":
-			{
-				"buffer_size": 1647,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "typings.json",
-			"settings":
-			{
-				"buffer_size": 262,
-				"line_ending": "Unix"
 			}
 		}
 	],
@@ -536,47 +294,93 @@
 	[
 		"/D/Git/angular2-testproject",
 		"/D/Git/angular2-testproject/assets",
+		"/D/Git/angular2-testproject/assets/json",
 		"/D/Git/angular2-testproject/assets/scripts",
 		"/D/Git/angular2-testproject/assets/styles",
 		"/D/Git/angular2-testproject/src",
 		"/D/Git/angular2-testproject/src/app",
+		"/D/Git/angular2-testproject/src/example",
+		"/D/Git/angular2-testproject/src/forfest",
 		"/D/Git/angular2-testproject/src/header",
 		"/D/Git/angular2-testproject/src/home",
 		"/D/Git/angular2-testproject/src/notes",
 		"/D/Git/angular2-testproject/src/shared",
+		"/D/Git/angular2-testproject/src/shared/misc",
 		"/D/Git/angular2-testproject/src/shared/note"
 	],
 	"file_history":
 	[
+		"/D/Git/angular2-testproject/src/forfest/forfest.component.ts",
+		"/D/Git/angular2-testproject/src/header/header.component.scss",
+		"/D/Git/angular2-testproject/src/notes/notes.component.html",
+		"/D/Git/angular2-testproject/src/notes/notes.component.ts",
+		"/D/Git/angular2-testproject/src/shared/misc/selection.service.ts",
+		"/D/Git/angular2-testproject/src/example/example.component.html",
+		"/D/Git/angular2-testproject/src/main.ts",
+		"/D/Git/angular2-testproject/src/app/LoggedInOutlet.ts",
+		"/D/Git/angular2-testproject/src/login/login.component.ts",
+		"/D/Git/angular2-testproject/src/login/login.component.html",
+		"/D/Git/angular2-testproject/src/shared/misc/headers.ts",
+		"/D/Git/angular2-testproject/node_modules/browser-sync/lib/default-config.js",
+		"/D/Git/angular2-testproject/bs-config.json",
+		"/D/Git/angular2-testproject/src/shared/note/note.ts",
+		"/D/Git/angular2-testproject/src/shared/note/note.component.html",
+		"/D/Git/angular2-testproject/src/app/app.component.ts",
+		"/D/Git/angular2-testproject/src/header/header.component.ts",
+		"/D/Git/angular2-testproject/src/app/app.routes.ts",
+		"/D/Git/angular2-testproject/src/shared/note/note.component.ts",
+		"/D/Git/angular2-testproject/index.html",
+		"/D/Git/angular2-testproject/src/shared/note/note.component.scss",
+		"/D/Git/angular2-testproject/src/app/app.component.scss",
+		"/D/Git/angular2-testproject/angular2-testproject.sublime-project",
+		"/D/Git/angular2-testproject/.gitignore",
+		"/D/Git/angular2-testproject/README.md",
+		"/D/Git/angular2testprojectdb/app.js",
+		"/D/Git/angular2testprojectdb/connection.js",
+		"/D/Git/angular2testprojectdb/models/note.js",
+		"/D/Git/angular2testprojectdb/routes.js",
+		"/D/Git/angular2testprojectdb/Gruntfile.js",
+		"/D/Git/angular2-testproject/src/example/example.component.scss",
+		"/D/Git/angular2-testproject/src/notes/notes.component.scss",
+		"/D/Git/angular2-testproject/assets/styles/_master.scss",
+		"/D/Git/angular2-testproject/src/footer/footer.component.scss",
+		"/D/Git/angular2-testproject/src/footer/footer.component.html",
+		"/D/Git/angular2-testproject/src/app/app.component.html",
+		"/D/Git/angular2-testproject/src/header/header.component.html",
+		"/D/Git/angular2-testproject/src/home/home.component.ts",
+		"/D/Git/angular2-testproject/src/home/home.component.scss",
+		"/D/Git/angular2-testproject/src/home/home.component.html",
+		"/D/Git/angular2-testproject/src/shared/misc/auth.service.ts",
+		"/D/Git/angular2-testproject/package.json",
+		"/D/Git/angular2-testproject/src/app/app.constants.ts",
+		"/D/Git/angular2-testproject/src/notes/notes.service.ts",
+		"/D/Git/testmedaxel/package.json",
+		"/D/Git/angular2testprojectdb/package.json",
+		"/D/Git/angular2-testproject/systemjs.config.js",
+		"/D/Git/angular2-testproject/src/forfest/forfest.component.html",
+		"/D/Git/angular2-testproject/src/forfest/forfest.component.scss",
+		"/D/Git/angular2-testproject/typings.json",
+		"/D/Git/testmedaxel/src/axel.ts",
+		"/D/Git/testmedaxel/src/axel.js",
 		"/D/Git/angular2-testproject/typings/globals/core-js/typings.json",
 		"/D/Git/angular2-testproject/typings/globals/jasmine/typings.json",
 		"/D/Git/angular2-testproject/typings/globals/jquery/typings.json",
-		"/D/Git/angular2testprojectdb/package.json",
 		"/D/Git/angular2-testproject/src/notes/notes.component.css",
-		"/D/Git/angular2-testproject/src/notes/notes.component.ts",
 		"/D/Git/angular2-testproject/src/notes/.notes.component_BASE_10900.html.swp",
 		"/D/Git/angular2-testproject/src/notes/.notes.component.html.swp",
 		"/D/Git/angular2-testproject/src/notes/notes.component_BACKUP_10900.html",
 		"/D/Git/angular2-testproject/terminal.glue",
 		"/C/Users/dalvenst/AppData/Roaming/Sublime Text 3/Packages/User/Glue.sublime-settings",
-		"/D/Git/angular2-testproject/src/header/header.component.ts",
-		"/D/Git/angular2-testproject/index.html",
 		"/C/Users/dalvenst/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/D/Git/angular2-testproject/assets/scripts/facebook.js",
-		"/D/Git/angular2-testproject/src/header/header.component.html",
-		"/D/Git/angular2-testproject/src/notes/notes.component.html",
 		"/D/Git/angular2-testproject/src/facebook/facebook.service.ts",
 		"/D/Git/angular2-testproject/ng2-facebook.ts",
-		"/D/Git/angular2-testproject/angular2-testproject.sublime-project",
 		"/D/Git/angular2-testproject/angular2-testproject.sublime-workspace",
-		"/D/Git/angular2-testproject/systemjs.config.js",
 		"/D/Git/angular2-testproject/wepack.config.js",
 		"/D/Git/angular2-testproject/src/aws/aws.config.ts",
 		"/D/Git/angular2-testproject/src/aws/aws.service.ts",
 		"/D/Git/angular2-testproject/src/aws/handle_login.php",
 		"/D/Git/angular2-testproject/src/aws/aws.service.js",
-		"/D/Git/angular2-testproject/src/app/app.component.html",
-		"/D/Git/angular2-testproject/README.md",
 		"/D/Git/angular2-testproject/node_modules/aws-sdk/index.js",
 		"/D/Git/angular2-testproject/node_modules/aws-sdk/package.json",
 		"/D/Git/angular2-testproject/src/app/app.service.js.map",
@@ -611,7 +415,6 @@
 		"/D/Git/angular2-testproject/app/main.js",
 		"/D/Git/angular2-testproject/app/main.js.map",
 		"/D/Git/angular2-testproject/app/main.css",
-		"/D/Git/angular2-testproject/package.json",
 		"/D/Git/angular2-testproject/gulpfile.js",
 		"/D/Git/angular2-testproject/app/app.js",
 		"/D/Git/angular2-testproject/app.js",
@@ -645,6 +448,7 @@
 		"height": 169.0,
 		"where_history":
 		[
+			"D:\\Git\\angular2-testproject",
 			"D:\\Git\\angular2-testproject\\src",
 			"D:\\Git\\angular2-testproject",
 			"D:\\Git\\angular2-testproject\\node_modules",
@@ -653,9 +457,21 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"INote",
+			"ghostmode: ",
+			"gulp",
+			"browsersync.init",
+			"ghostmode: ",
+			"ghostmode",
+			"browserSync.instance",
+			"browserSync",
+			"browserSync.use",
+			"browser-sync",
+			"browser",
+			"browsersync",
 			"MyTypedItem",
 			"todo",
 			"app",
@@ -711,1010 +527,12 @@
 	"groups":
 	[
 		{
-			"selected": 37,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/notes/notes.component.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4333,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4206,
-								4206
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true,
-							"typescript_plugin_format_options":
-							{
-								"convertTabsToSpaces": true,
-								"indentSize": 4,
-								"tabSize": 4
-							}
-						},
-						"translation.x": 0.0,
-						"translation.y": 817.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/notes/notes.component.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2690,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1651,
-								1651
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"use_tab_stops": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 520.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/shared/misc/selection.service.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1545,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								600,
-								600
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"open_with_edit": true,
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true,
-							"use_tab_stops": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 120.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 34,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "src/example/example.component.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 197,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								171,
-								171
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 39,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "src/main.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 554,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								470,
-								470
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"use_tab_stops": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 19,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "src/shared/note/note.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 91,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								91,
-								91
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"use_tab_stops": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "src/shared/note/note.component.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 482,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								210,
-								210
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"open_with_edit": true,
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "src/app/app.component.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 522,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								411,
-								411
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"typescript_plugin_format_options":
-							{
-								"convertTabsToSpaces": true,
-								"indentSize": 4,
-								"tabSize": 4
-							},
-							"use_tab_stops": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 36,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "src/header/header.component.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 487,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								470,
-								470
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"use_tab_stops": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "src/app/app.routes.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 552,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								552,
-								552
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"use_tab_stops": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 32,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "src/shared/note/note.component.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 532,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								473,
-								473
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"open_with_edit": true,
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"typescript_plugin_format_options":
-							{
-								"convertTabsToSpaces": true,
-								"indentSize": 2,
-								"tabSize": 2
-							},
-							"use_tab_stops": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 891,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								35,
-								35
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 35,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "src/shared/note/note.component.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 38,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								38,
-								38
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"open_with_edit": true,
-							"syntax": "Packages/sass-textmate-bundle/Syntaxes/Sass.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "src/app/app.component.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 195,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								195,
-								195
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"syntax": "Packages/sass-textmate-bundle/Syntaxes/Sass.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 31,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "angular2-testproject.sublime-project",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 203,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								148,
-								148
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 16,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": ".gitignore",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 59,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								59,
-								59
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"typescript_plugin_format_options":
-							{
-								"convertTabsToSpaces": true,
-								"indentSize": 4,
-								"tabSize": 4
-							}
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 18,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1654,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								341,
-								341
-							]
-						],
-						"settings":
-						{
-							"auto_indent": false,
-							"default_dir": "D:\\Git\\angular2-testproject",
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_width": 2,
-							"word_wrap": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 17,
-					"type": "text"
-				},
-				{
-					"buffer": 17,
-					"file": "/D/Git/angular2testprojectdb/app.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 405,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								405,
-								405
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"open_with_edit": true,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 23,
-					"type": "text"
-				},
-				{
-					"buffer": 18,
-					"file": "/D/Git/angular2testprojectdb/connection.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 664,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								664,
-								664
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"open_with_edit": true,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 22,
-					"type": "text"
-				},
-				{
-					"buffer": 19,
-					"file": "/D/Git/angular2testprojectdb/models/note.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1527,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								680,
-								680
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"open_with_edit": true,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 24,
-					"type": "text"
-				},
-				{
-					"buffer": 20,
-					"file": "/D/Git/angular2testprojectdb/routes.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 963,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								355,
-								355
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"open_with_edit": true,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 26,
-					"type": "text"
-				},
-				{
-					"buffer": 21,
-					"file": "/D/Git/angular2testprojectdb/Gruntfile.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 320,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								320,
-								320
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"open_with_edit": true,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 27,
-					"type": "text"
-				},
-				{
-					"buffer": 22,
-					"file": "src/example/example.component.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 605,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								348,
-								348
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"syntax": "Packages/sass-textmate-bundle/Syntaxes/Sass.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true,
-							"typescript_plugin_format_options":
-							{
-								"convertTabsToSpaces": true,
-								"indentSize": 4,
-								"tabSize": 4
-							}
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 37,
-					"type": "text"
-				},
-				{
-					"buffer": 23,
-					"file": "src/header/header.component.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 191,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								37,
-								0
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"syntax": "Packages/sass-textmate-bundle/Syntaxes/Sass.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 33,
-					"type": "text"
-				},
-				{
-					"buffer": 24,
-					"file": "src/notes/notes.component.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 734,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								58,
-								58
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"syntax": "Packages/sass-textmate-bundle/Syntaxes/Sass.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true,
-							"typescript_plugin_format_options":
-							{
-								"convertTabsToSpaces": true,
-								"indentSize": 4,
-								"tabSize": 4
-							}
-						},
-						"translation.x": 0.0,
-						"translation.y": 468.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 25,
-					"file": "assets/styles/_master.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 710,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								710,
-								113
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"syntax": "Packages/sass-textmate-bundle/Syntaxes/Sass.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 26,
-					"file": "src/footer/footer.component.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 239,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								122,
-								122
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"syntax": "Packages/sass-textmate-bundle/Syntaxes/Sass.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 38,
-					"type": "text"
-				},
-				{
-					"buffer": 27,
-					"file": "src/footer/footer.component.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 95,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								37,
-								37
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 40,
-					"type": "text"
-				},
-				{
-					"buffer": 28,
-					"file": "src/app/app.component.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 181,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								99,
-								99
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"typescript_plugin_format_options":
-							{
-								"convertTabsToSpaces": true,
-								"indentSize": 4,
-								"tabSize": 4
-							}
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 29,
-					"file": "src/header/header.component.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 675,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								391,
-								391
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"typescript_plugin_format_options":
-							{
-								"convertTabsToSpaces": true,
-								"indentSize": 4,
-								"tabSize": 4
-							}
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 30,
-					"file": "src/home/home.component.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 225,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								225,
-								225
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"open_with_edit": true,
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"use_tab_stops": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 30,
-					"type": "text"
-				},
-				{
-					"buffer": 31,
-					"file": "src/home/home.component.scss",
+					"file": "src/forfest/forfest.component.scss",
 					"semi_transient": false,
 					"settings":
 					{
@@ -1731,128 +549,70 @@
 						],
 						"settings":
 						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"open_with_edit": true,
 							"syntax": "Packages/sass-textmate-bundle/Syntaxes/Sass.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 32,
-					"file": "assets/scripts/facebook.js",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 2809,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 33,
-					"file": "src/home/home.component.html",
+					"buffer": 1,
+					"file": "src/forfest/forfest.component.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 48,
+						"buffer_size": 455,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								48,
-								48
+								100,
+								100
 							]
 						],
 						"settings":
 						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"open_with_edit": true,
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": true,
+								"indentSize": 4,
+								"tabSize": 4
+							},
+							"use_tab_stops": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 29,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 34,
-					"file": "package.json",
+					"buffer": 2,
+					"file": "src/forfest/place.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1554,
+						"buffer_size": 61,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1214,
-								1191
+								18,
+								18
 							]
 						],
 						"settings":
 						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 20,
-					"type": "text"
-				},
-				{
-					"buffer": 35,
-					"file": "src/app/app.constants.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 236,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								236,
-								236
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 							"open_with_edit": true,
 							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
 							"use_tab_stops": false
@@ -1861,11 +621,147 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 36,
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3883,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										243,
+										248
+									],
+									[
+										449,
+										453
+									],
+									[
+										637,
+										641
+									],
+									[
+										778,
+										782
+									],
+									[
+										983,
+										987
+									],
+									[
+										1294,
+										1298
+									],
+									[
+										1420,
+										1424
+									],
+									[
+										1666,
+										1670
+									],
+									[
+										1839,
+										1843
+									],
+									[
+										1954,
+										1958
+									],
+									[
+										2101,
+										2106
+									],
+									[
+										2220,
+										2225
+									],
+									[
+										2379,
+										2384
+									],
+									[
+										2605,
+										2610
+									],
+									[
+										2728,
+										2733
+									],
+									[
+										2747,
+										2752
+									],
+									[
+										2964,
+										2969
+									],
+									[
+										3087,
+										3092
+									],
+									[
+										3413,
+										3418
+									],
+									[
+										3555,
+										3560
+									],
+									[
+										3602,
+										3607
+									],
+									[
+										3688,
+										3693
+									],
+									[
+										3797,
+										3802
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								1959,
+								1959
+							]
+						],
+						"settings":
+						{
+							"default_dir": "D:\\Git\\angular2-testproject",
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ 	].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 240.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
 					"file": "src/notes/notes.service.ts",
 					"semi_transient": false,
 					"settings":
@@ -1877,16 +773,117 @@
 						"selection":
 						[
 							[
-								1011,
-								1011
+								1708,
+								1708
 							]
 						],
 						"settings":
 						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"open_with_edit": true,
 							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
 							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 120.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/notes/notes.component.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2719,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								911,
+								911
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": true,
+								"indentSize": 4,
+								"tabSize": 4
+							},
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 300.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/shared/note/note.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 91,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								18,
+								18
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": true,
+								"indentSize": 4,
+								"tabSize": 4
+							},
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/shared/note/note.component.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 532,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								112,
+								81
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true,
 							"use_tab_stops": false
 						},
@@ -1894,128 +891,123 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 37,
-					"file": "/D/Git/testmedaxel/package.json",
+					"buffer": 8,
+					"file": "src/app/app.routes.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 560,
+						"buffer_size": 669,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								600,
+								600
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"use_tab_stops": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 38,
-					"file": "/D/Git/angular2testprojectdb/package.json",
+					"buffer": 9,
+					"file": "src/forfest/forfest.component.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 286,
+						"buffer_size": 165,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								286,
-								286
+								118,
+								118
 							]
 						],
 						"settings":
 						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 25,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 39,
-					"file": "systemjs.config.js",
+					"buffer": 10,
+					"file": "assets/json/places.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1647,
+						"buffer_size": 131,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								963,
-								963
+								71,
+								71
 							]
 						],
 						"settings":
 						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 28,
-					"type": "text"
-				},
-				{
-					"buffer": 40,
-					"file": "typings.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 262,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								262,
-								262
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
+							"open_with_edit": true,
 							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 21,
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "src/header/header.component.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 777,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								617,
+								617
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
 					"type": "text"
 				}
 			]

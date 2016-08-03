@@ -1,6 +1,7 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { FORM_DIRECTIVES, REACTIVE_FORM_DIRECTIVES, FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
+import * as $ from 'jquery';
 
 import { NoteComponent } from '../shared/note/note.component';
 import { INote } from '../shared/note/note';
