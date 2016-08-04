@@ -31,6 +31,7 @@
     "gulp": "^3.9.1",
     "gulp-sass": "^2.3.2",
     "jquery": "^3.0.0",
+    "jquery-textfill": "^0.6.0",
     "lite-server": "^2.2.2",
     "node-sass": "^3.8.0",
     "nodemon": "^1.9.2",
@@ -51,6 +52,6 @@
     "url": "git://github.com/danielalvenstrand/angular2-testproject.git"
   },
   "config": {
-    "unsafe-perm":true
+    "unsafe-perm": true
   }
 }

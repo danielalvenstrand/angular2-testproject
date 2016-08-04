@@ -1,1 +1,12 @@
 @import 'assets/styles/_master.scss';
+
+.forfest {
+    h1 {
+        text-align: center;
+    }
+    .input-group-addon{
+        .glyphicon{
+            cursor:pointer;
+        }
+    }
+}

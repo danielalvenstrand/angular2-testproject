@@ -1,4 +1,8 @@
 export interface IPlace{
     name: string;
-    img: string;
+    rating: number;
+    storStark: number;
+    txtClr: string;
+    bgClr: string;
+    imgSrc: string;
 }

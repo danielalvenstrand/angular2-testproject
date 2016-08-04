@@ -1,6 +1,7 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, HostListener, ViewChild, QueryList } from '@angular/core';
 
 import * as $ from 'jquery';
+require('node_modules/jquery-textfill/source/jquery.textfill.min.js');
 
 import { StarComponent } from '../star/star.component';
 import { IPlace } from './place';
@@ -15,19 +16,30 @@ import { IPlace } from './place';
 
 export class PlaceComponent implements OnInit{
   @Input() place: IPlace;
-  @Output() update: EventEmitter<IPlace>;
-  @ViewChild('placeBox') placeBox;
+  @Input() filter: string;
+  @ViewChild('nameTag') nameTag;
 
-    constructor(){
-      this.update = new EventEmitter<IPlace>();
-    }
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.resizeText();
+  }
 
-    ngOnInit(): void {
+  constructor(){
 
-    }
+  }
 
-    close() {
-      this.update.emit(this.place);
-    }
+  ngOnInit(): void {
+    setTimeout(() => {console.log($(this.nameTag.nativeElement));this.resizeText()},0);
+  }
+
+  filtered(): boolean{
+    let isFiltered = this.place.name.toLowerCase().indexOf(this.filter.toLowerCase())>-1;
+    return isFiltered;
+  }
+
+  resizeText(): void {
+     $(this.nameTag.nativeElement).textfill({maxFontPixels:-1});
+  }
+
 }
 

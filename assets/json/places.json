@@ -1,6 +1,6 @@
 [
-    {"name": "Lion Bar", "rating": "3", "txtClr": "#fff", "bgClr": "#000", "imgSrc": "assets/images/lion_bar.png"},
-    {"name": "Retro", "rating": "4", "txtClr": "#d39", "bgClr": "#fff", "imgSrc": "assets/images/retro-vasastan.gif"},
-    {"name": "Dovas", "rating": "2", "txtClr": "#fff", "bgClr": "#d01", "imgSrc": "assets/images/dovas.jpg"},
-    {"name": "Hirschenkeller", "rating": "5", "txtClr": "#f00", "bgClr": "#000", "imgSrc": "assets/images/lion_bar.jpg"}
+    {"name": "Lion Bar", "rating": "3", "storStark": "23", "txtClr": "#fff", "bgClr": "#000", "imgSrc": "assets/images/lion_bar.png"},
+    {"name": "Retro", "rating": "4", "storStark": "29", "txtClr": "#d39", "bgClr": "#fff", "imgSrc": "assets/images/retro-vasastan.gif"},
+    {"name": "Dovas", "rating": "2", "storStark": "27", "txtClr": "#fff", "bgClr": "#d01", "imgSrc": "assets/images/dovas.jpg"},
+    {"name": "Hirschenkeller", "rating": "5", "storStark": "29", "txtClr": "#f00", "bgClr": "#000", "imgSrc": "assets/images/hirschenkeller.png"}
 ]

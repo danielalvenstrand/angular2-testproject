@@ -1,9 +1,15 @@
-<div class="container">
+<div class="container forfest">
     <div class="row">
-    <h1>Förfest</h1>
-    <hr />
+        <h1>Förfestställen</h1>
+        <hr />
+        <label for="filter" class="label label-default">Namn</label>
+        <div class="input-group">
+            <span class="input-group-addon"><span [class]='order?"glyphicon glyphicon-menu-up":"glyphicon glyphicon-menu-down"' (click)='order=!order'></span></span>
+            <input type="text" class="form-control" id="filter" [(ngModel)]='filter' placeholder="Filter..." /><br>
+            <span class="input-group-addon">Visar {{countFiltered()}} av {{places.length}} förfestställen.</span>
+        </div>
     </div>
     <div class="row">
-        <place-component *ngFor='let place of places' [place]='place'></place-component>
+        <place-component *ngFor='let place of places | filterPlaces: filter:order' [place]='place' [filter]='filter'></place-component>
     </div>
 </div>
