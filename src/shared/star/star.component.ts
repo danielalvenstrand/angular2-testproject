@@ -14,13 +14,14 @@ export class StarComponent implements OnInit{
   @ViewChild('starBox') starBox;
 
     constructor(){
+
     }
 
     ngOnInit(): void {
-      $.each(
-        $(this.starBox.nativeElement).find('.glyphicon-star'),(i,e) => {
-          if(i>this.rating-1) $(e).hide();
-        });
+      var w;
+      if (this.rating) w =$(this.starBox.nativeElement).outerWidth(true)*((this.rating+1)/5);
+      else w = 0;
+      $(this.starBox.nativeElement).width(w);
     }
 
 }

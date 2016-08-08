@@ -4,4 +4,12 @@
     display:inline-block;
     white-space:nowrap;
     font-size: 20px;
+    width:100%;
+    overflow:hidden;
+    text-align:left;
+
+    &:after {
+        content:"";
+        display:block;
+    }
 }

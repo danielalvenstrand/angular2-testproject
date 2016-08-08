@@ -1,8 +1,11 @@
 import { Component, OnInit, Input, HostListener, ViewChild, QueryList } from '@angular/core';
+import {DomSanitizationService} from '@angular/platform-browser';
 
 import * as $ from 'jquery';
 require('node_modules/jquery-textfill/source/jquery.textfill.min.js');
 
+import { ForfestService } from '../../forfest/forfest.service';
+import { Configuration } from '../../app/app.constants';
 import { StarComponent } from '../star/star.component';
 import { IPlace } from './place';
 
@@ -11,7 +14,8 @@ import { IPlace } from './place';
   selector: 'place-component',
   templateUrl: 'place.component.html',
   styleUrls: ['place.component.css'],
-  directives: [StarComponent]
+  directives: [StarComponent],
+  providers: [ForfestService]
 })
 
 export class PlaceComponent implements OnInit{
@@ -24,21 +28,26 @@ export class PlaceComponent implements OnInit{
     this.resizeText();
   }
 
-  constructor(){
-
+  constructor(private _fs: ForfestService, private _DomSanitizationService: DomSanitizationService, private _configuration: Configuration){
   }
 
   ngOnInit(): void {
-    setTimeout(() => {console.log($(this.nameTag.nativeElement));this.resizeText()},0);
+    setTimeout(() => this.resizeText(),0);
   }
 
-  filtered(): boolean{
+  filtered(): boolean {
     let isFiltered = this.place.name.toLowerCase().indexOf(this.filter.toLowerCase())>-1;
     return isFiltered;
   }
 
   resizeText(): void {
      $(this.nameTag.nativeElement).textfill({maxFontPixels:-1});
+  }
+
+  getPhoto(): any {
+    if (this.place.photos) return "background-image: url('https://maps.googleapis.com/maps/api/place/photo?key="+this._configuration.gpAPIKey+"&photoreference=" + this.place.photos[0].photo_reference + "&maxwidth=500');";
+    else return "background-image: url('assets/images/lion_bar.jpg');";
+
   }
 
 }

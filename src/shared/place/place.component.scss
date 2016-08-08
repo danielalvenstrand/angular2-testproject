@@ -14,17 +14,6 @@
         padding:0;
     }
 
-    .image {
-        display: block;
-        position:absolute;
-        width:100%;
-        height:100%;
-        opacity: 1;
-        transition: opacity 0.3s;
-        background-size: cover;
-        background-position: center center;
-    }
-
     .nameTag {
         width:100%;
         height:100%;
@@ -45,35 +34,36 @@
         position:absolute;
         width:100%;
         height:100%;
-        opacity: 1;
+        opacity: 0.5;
         transition: opacity 0.3s;
         background-size: cover;
         background-position: center center;
     }
 
     .name {
-        opacity:0;
+        opacity:1;
         transition: opacity 0.3s;
     }
 
     .stars {
-        opacity:1;
+        opacity:0;
+        color: yellow;
         transition: opacity 0.3s;
-        -webkit-text-stroke: 2px black;
+        -webkit-text-stroke: 2px white;
     }
 
 
     &:hover {
         .image {
-            opacity: 0;
-        }
-
-        .name {
             opacity: 1;
         }
 
+        .name {
+            opacity: 0.25;
+        }
+
         .stars {
-            opacity: 0;
+            opacity: 1;
         }
     }
 }
