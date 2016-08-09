@@ -25,6 +25,12 @@ export class ForfestComponent implements OnInit {
 
     places: IPlace[];
     filter: string;
+    radius: number;
+    placeTypes: {
+            bars: boolean,
+            night_clubs: boolean,
+            restaurants: boolean
+        };
     order: boolean;
     names: string;
     location: {
@@ -38,14 +44,24 @@ export class ForfestComponent implements OnInit {
     map: any;
     service: any;
     infowindow: any;
+    searchBox: any;
     markers: any[];
 
     constructor(private _fs: ForfestService, private _DomSanitizationService: DomSanitizationService, zone:NgZone){
         this.zone = zone;
         this.filter = "";
+        this.radius = 100;
+        this.placeTypes = {
+            bars: true,
+            night_clubs: false,
+            restaurants: false
+        }
         this.places = [];
         this.order = true;
-        this.location = {lat:59.340732,lng:18.058287};
+        this.location = {
+            lat:59.340732,
+            lng:18.058287
+        };
         this.showMap = true;
         this.loadMap = true;
 
@@ -55,67 +71,72 @@ export class ForfestComponent implements OnInit {
     ngOnInit(): void {
         this.gmInit();
 
-        google.maps.event.addListener(this.map, "rightclick", event => {
-
-            var lat = event.latLng.lat();
-            var lng = event.latLng.lng();
-
-            while(this.markers.length){
-                this.markers.pop().setMap(null);
-            }
-
-            this.zone.run(() => {this.location = {lat:lat,lng:lng};this.loadMap = true;});
-
-            var request = {
-                location: new google.maps.LatLng(lat,lng),
-                radius: '100',
-                types: ['bar']
-            };
-            this.service.nearbySearch(request, this.callback);
-            this.map.setCenter(this.location);
-
+        this.searchBox.addListener('places_changed', event => {
+            var pl = this.searchBox.getPlaces();
+            var lat=pl[0].geometry.location.lat()
+            , lng=pl[0].geometry.location.lng();
+            this.setMap(lat,lng);
         });
 
+        google.maps.event.addListener(this.map, "rightclick", event => {
+            var lat = event.latLng.lat()
+            , lng = event.latLng.lng();
+            this.setMap(lat,lng);
+        });
     }
 
     countFiltered(): number {
         return new FilterPlaces().transform(this.places,this.filter).length;
     }
 
+    setMap(lat,lng): void {
+        while(this.markers.length){
+                this.markers.pop().setMap(null);
+            }
+
+            this.zone.run(() => {this.location = {lat:lat,lng:lng};this.loadMap = true;});
+
+
+
+            var request = {
+                location: new google.maps.LatLng(lat,lng),
+                radius: this.radius,
+                types: [this.placeTypes.bars?'bar':null,this.placeTypes.night_clubs?'night_club':null,this.placeTypes.restaurants?'restaurant':null]
+            };
+            this.service.nearbySearch(request, this.callback);
+            this.map.setCenter(this.location);
+    }
+
     gmInit(): void {
         var latlng = new google.maps.LatLng(this.location.lat,this.location.lng)
+
+        this.searchBox = new google.maps.places.SearchBox(document.getElementById('searchBox'));
 
         this.map = new google.maps.Map(document.getElementById('map'), {
             center: latlng,
             zoom: 15
         });
 
-        var request = {
-            location: latlng,
-            radius: '100',
-            types: ['bar']
-        };
-
         this.service = new google.maps.places.PlacesService(this.map);
-        this.service.nearbySearch(request, this.callback);
+        this.setMap(this.location.lat,this.location.lng);
     }
 
     callback = (results, status) => {
-        this.zone.run(() => {this.loadMap = false;});
-        if (status == google.maps.places.PlacesServiceStatus.OK) {
-            this.places = results;
-            for (var i = 0; i < results.length; i++) {
-                var place = results[i];
+        this.zone.run(() => {this.loadMap = false;
+            if (status == google.maps.places.PlacesServiceStatus.OK) {
+                this.places = results;
+                for (var i = 0; i < results.length; i++) {
+                    var place = results[i];
 
-                var marker = new google.maps.Marker({
-                    map: this.map,
-                    position: place.geometry.location
-                });
+                    var marker = new google.maps.Marker({
+                        map: this.map,
+                        position: place.geometry.location
+                    });
 
-                this.markers.push(marker);
+                    this.markers.push(marker);
+                }
             }
-        }
-
+        });
 
     }
 

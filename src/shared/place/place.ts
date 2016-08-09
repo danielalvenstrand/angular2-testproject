@@ -1,19 +1,9 @@
 export interface IPlace{
-    geometry: {
-        location: {
-            lat: number;
-            long: number;
-        }
-    };
+    geometry: any;
 
     name: string;
 
-    photos: {
-        height: number;
-        width: number;
-        html_attributions: string[];
-        photo_reference: string;
-    }[];
+    photos: any [];
 
     photo: string;
 

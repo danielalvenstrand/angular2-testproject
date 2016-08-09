@@ -3,6 +3,7 @@ import {DomSanitizationService} from '@angular/platform-browser';
 
 import * as $ from 'jquery';
 require('node_modules/jquery-textfill/source/jquery.textfill.min.js');
+declare var google: any;
 
 import { ForfestService } from '../../forfest/forfest.service';
 import { Configuration } from '../../app/app.constants';
@@ -33,7 +34,9 @@ export class PlaceComponent implements OnInit{
 
   ngOnInit(): void {
     setTimeout(() => this.resizeText(),0);
+    if (this.place.photos) this.place.photo = this.place.photos[0].getUrl({ 'maxWidth': 35, 'maxHeight': 35 });
   }
+
 
   filtered(): boolean {
     let isFiltered = this.place.name.toLowerCase().indexOf(this.filter.toLowerCase())>-1;
@@ -44,9 +47,9 @@ export class PlaceComponent implements OnInit{
      $(this.nameTag.nativeElement).textfill({maxFontPixels:-1});
   }
 
-  getPhoto(): any {
-
+  getPhoto(): string {
+    if (this.place.photos) return "url('"+this.place.photo+")";
+    else return "url('/assets/images/lion_bar.jpg')";
   }
-
 }
 
