@@ -45,8 +45,6 @@ export class PlaceComponent implements OnInit{
   }
 
   getPhoto(): any {
-    if (this.place.photos) return "background-image: url('https://maps.googleapis.com/maps/api/place/photo?key="+this._configuration.gpAPIKey+"&photoreference=" + this.place.photos[0].photo_reference + "&maxwidth=500');";
-    else return "background-image: url('assets/images/lion_bar.jpg');";
 
   }
 

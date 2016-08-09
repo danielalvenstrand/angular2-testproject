@@ -1,15 +1,35 @@
 <div class="container forfest">
+
     <div class="row">
         <h1>Förfestställen</h1>
+        <br>
+        <ul class="nav nav-pills nav-justified">
+            <li (click)='showMap=true' [class.active]='showMap'><a><span class="glyphicon glyphicon-map-marker"></span></a></li>
+            <li (click)='showMap=false' [class.active]='!showMap'><a><span class="glyphicon glyphicon-list"></span></a></li>
+        </ul>
         <hr />
-        <label for="filter" class="label label-default">Namn</label>
-        <div class="input-group">
-            <span class="input-group-addon"><span [class]='order?"glyphicon glyphicon-menu-up":"glyphicon glyphicon-menu-down"' (click)='order=!order'></span></span>
-            <input type="text" class="form-control" id="filter" [(ngModel)]='filter' placeholder="Filter..." /><br>
-            <span class="input-group-addon">Visar {{countFiltered()}} av {{places.length}} förfestställen.</span>
+        <div [hidden]='showMap'>
+            <label for="filter" class="label label-default">Namn</label>
+            <div class="input-group">
+                <span class="input-group-addon clickable" (click)='order=!order'><span [class]='order?"glyphicon glyphicon-menu-up":"glyphicon glyphicon-menu-down"'></span></span>
+                <input type="text" class="form-control" id="filter" [(ngModel)]='filter' placeholder="Filter..." /><br>
+                <span class="input-group-addon">Visar {{countFiltered()}} av {{places.length}} förfestställen.</span>
+            </div>
+            <div class="row">
+                <place-component *ngFor='let place of places | filterPlaces: filter:order' [place]='place' [filter]='filter'></place-component>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <place-component *ngFor='let place of places | filterPlaces: filter:order' [place]='place' [filter]='filter'></place-component>
+    <div class="place-box panel panel-default" [hidden]='!showMap'>
+
+        <div class="panel-body">
+
+            <div id="map"></div>
+        </div>
+        <div class="panel-footer">
+        <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate pull-right" *ngIf='loadMap'></span>
+    <p>Latitue: {{location.lat}}<br/>Longitude: {{location.lng}}</p>
+
+    </div>
     </div>
 </div>
