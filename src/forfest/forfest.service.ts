@@ -18,20 +18,9 @@ export class ForfestService{
         this.headers.append('Content-Type', "application/json");
     }
 
-    /*public GetPlaceSearch = (location: string, radius: string, type: string): Observable<IPlace[]> => {
-        let toAsk = JSON.stringify({ key: this._configuration.gpAPIKey, location: location, radius: radius, type: type });
-        return this._http.post("http://localhost:8000/api/placesearch", toAsk, { headers: this.headers })
-            .map((response: Response) => <IPlace[]>response.json().results)
-            .catch(this.handleError);
-    }*/
-
     private handleError(error: Response) {
         console.error(error);
         return Observable.throw(error.json().error || 'Server error');
-    }
-
-    public initMap(): void {
-        console.log("yep");
     }
 
 }

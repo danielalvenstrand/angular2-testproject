@@ -1,11 +1,15 @@
 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-    <div class="place-box panel panel-default" #placeBox [style.background-color]='"#333"'>
+    <div class="place-box panel panel-default" #placeBox [style.border-color]='getBorder()'>
         <div class="panel-body">
             <div class="image" [style.background-image]="_DomSanitizationService.bypassSecurityTrustStyle(getPhoto())" ></div>
             <span #nameTag class="nameTag" [style.color]='"#fff"'>
                 <span class="name">{{place.name}}
                 </span>
-                <span class="stars"><star-component [rating]='place.rating' ></star-component></span>
+                <span class="stars"><star-component [rating]='place.rating' ></star-component>
+                </span>
+                <hr />
+                <span class="distance">Avstånd: {{place.distance | number: "1.0-0" }} meter</span>
+                <span [style.color]='getBorder()' class="open">{{getOpen()}}</span>
             </span>
         </div>
     </div>

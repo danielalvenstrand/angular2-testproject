@@ -1,7 +1,12 @@
-<div #starBox class="starBox" [hidden]='!rating'>
-    <span class="glyphicon glyphicon-star"></span>
-    <span class="glyphicon glyphicon-star"></span>
-    <span class="glyphicon glyphicon-star"></span>
-    <span class="glyphicon glyphicon-star"></span>
-    <span class="glyphicon glyphicon-star"></span>
+<div #starBox class="starBox">
+	<div  *ngIf='!rating' class="starWrap">
+		<span class="glyphicon glyphicon-question-sign"></span>
+	</div>
+	<div *ngIf='rating' class="starWrap">
+	    <span class="glyphicon glyphicon-star"></span>
+	    <span class="glyphicon glyphicon-star"></span>
+	    <span class="glyphicon glyphicon-star"></span>
+	    <span class="glyphicon glyphicon-star"></span>
+	    <span class="glyphicon glyphicon-star"></span>
+    </div>
 </div>

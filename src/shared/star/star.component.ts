@@ -18,7 +18,7 @@ export class StarComponent implements OnInit{
     }
 
     ngOnInit(): void {
-      $(this.starBox.nativeElement).width($(this.starBox.nativeElement).outerWidth(true)*((this.rating+1)/5));
+      $(this.starBox.nativeElement).width($(this.starBox.nativeElement).outerWidth(true)*((this.rating+1)/5)-5);
     }
 
 }

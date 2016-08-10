@@ -3,17 +3,17 @@
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand"
-          (click)="setTitle('Angular 2 Test Project')" [routerLink]="['']">Angular 2 Test Project</a>
+          (click)="setTitle('Angular 2 Test Project')" routerLink="" routerLinkActive="active">Angular 2 Test Project</a>
         </div>
         <ul class="nav navbar-nav">
           <li><a
-          (click)="setTitle('Angular 2 Test Project')" [routerLink]="['']">Home</a></li>
+          (click)="setTitle('Angular 2 Test Project')" routerLink="" routerLinkActive="active">Home</a></li>
           <li><a
-          (click)="setTitle('Notes')" [routerLink]="['/notes']">Notes</a></li>
+          (click)="setTitle('Notes')" routerLink="/notes" routerLinkActive="active">Notes</a></li>
           <li><a
-          (click)="setTitle('Förfest')" [routerLink]="['/forfest']">Förfest</a></li>
+          (click)="setTitle('Förfest')" routerLink="/forfest" routerLinkActive="active">Förfest</a></li>
           <li><a
-          (click)="setTitle('Example')" [routerLink]="['/example']">Example</a></li>
+          (click)="setTitle('Example')" routerLink="/example" routerLinkActive="active">Example</a></li>
         </ul>
       </div>
     </nav>

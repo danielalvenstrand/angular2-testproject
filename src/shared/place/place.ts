@@ -9,4 +9,8 @@ export interface IPlace{
 
     rating: number;
 
+    opening_hours: {open_now: boolean};
+
+    distance: number;
+
 }
