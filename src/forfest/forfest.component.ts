@@ -30,6 +30,7 @@ export class ForfestComponent implements OnInit {
     ascending: boolean;
     showMap: boolean;
     showList: boolean;
+    showArrow: boolean;
 
     constructor(private _fs: ForfestService, private _DomSanitizationService: DomSanitizationService){
         this.places = [];
@@ -37,8 +38,9 @@ export class ForfestComponent implements OnInit {
         this.filterDistance = 1000;
         this.orderBy = "name";
         this.ascending = true;
-        this.showMap = true;
+        this.showMap = false;
         this.showList = false;
+        this.showArrow = true;
     }
 
     ngOnInit(): void {
