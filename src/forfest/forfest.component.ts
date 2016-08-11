@@ -38,7 +38,7 @@ export class ForfestComponent implements OnInit {
         this.orderBy = "name";
         this.ascending = true;
         this.showMap = true;
-        this.showLsit = true;
+        this.showList = false;
     }
 
     ngOnInit(): void {
