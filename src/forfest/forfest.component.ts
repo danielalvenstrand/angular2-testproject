@@ -29,7 +29,8 @@ export class ForfestComponent implements OnInit {
     orderBy: string;
     ascending: boolean;
     showMap: boolean;
- 
+    showList: boolean;
+
     constructor(private _fs: ForfestService, private _DomSanitizationService: DomSanitizationService){
         this.places = [];
         this.filterName = "";
@@ -37,10 +38,11 @@ export class ForfestComponent implements OnInit {
         this.orderBy = "name";
         this.ascending = true;
         this.showMap = true;
+        this.showLsit = true;
     }
 
     ngOnInit(): void {
-        
+
     }
 
     countFiltered(): number {

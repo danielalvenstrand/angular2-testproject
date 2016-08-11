@@ -1,8 +1,8 @@
 {
   "resolution": "main",
   "tree": {
-    "src": "F:\\Git\\angular2-testproject\\typings\\custom\\jquery.textfill\\index.d.ts",
+    "src": "D:\\Git\\angular2-testproject\\typings\\custom\\jquery.textfill\\index.d.ts",
     "raw": "file:typings/custom/jquery.textfill/index.d.ts",
-    "typings": "F:\\Git\\angular2-testproject\\typings\\custom\\jquery.textfill\\index.d.ts"
+    "typings": "D:\\Git\\angular2-testproject\\typings\\custom\\jquery.textfill\\index.d.ts"
   }
 }

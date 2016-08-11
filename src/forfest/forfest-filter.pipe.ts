@@ -21,7 +21,7 @@ export class FilterPlaces implements PipeTransform{
         } else {
           return sortArray[2];
         }
-        case "distance": 
+        case "distance":
         if (a.distance < b.distance) {
           return sortArray[0];
         } else if (a.distance > b.distance) {
@@ -32,7 +32,6 @@ export class FilterPlaces implements PipeTransform{
         default:
         return sortArray[2];
       }
-    }
-  });
+    });
   }
 }

@@ -1,5 +1,8 @@
 import { Component, OnInit, Output, EventEmitter, NgZone } from '@angular/core';
 
+import { PlaceComponent } from '../place/place.component';
+import { IPlace } from '../place/place';
+
 declare var google: any;
 
 @Component({
@@ -11,6 +14,7 @@ declare var google: any;
 
 export class MapComponent implements OnInit{
   @Output() update: EventEmitter<any>;
+  currentPlace: IPlace;
 
   zone: NgZone;
   radius: number;
@@ -43,6 +47,8 @@ export class MapComponent implements OnInit{
   constructor(zone:NgZone){
     this.update = new EventEmitter<any>();
     this.zone = zone;
+
+    this.currentPlace = null;
 
     this.radius = 100;
     this.placeTypes = {
@@ -82,11 +88,13 @@ export class MapComponent implements OnInit{
       , lng = event.latLng.lng();
       this.setMap(lat,lng);
     });
+
   }
 
   setMap(lat,lng): void {
     while(this.markers.length){
-      this.markers.pop().setMap(null);
+      var mark = this.markers.pop();
+      if (mark.setMap) mark.setMap(null);
     }
 
     this.zone.run(() => {this.location = {lat:lat,lng:lng};this.loadMap = true;});
@@ -99,7 +107,8 @@ export class MapComponent implements OnInit{
       types: [this.placeTypes.bars?'bar':null,this.placeTypes.night_clubs?'night_club':null,this.placeTypes.restaurants?'restaurant':null]
     };
     this.service.nearbySearch(request, this.callback);
-    this.map.setCenter(this.location);
+    this.map.panTo(this.location);
+
   }
 
   gmInit(): void {
@@ -120,17 +129,22 @@ export class MapComponent implements OnInit{
     this.zone.run(() => {
       this.loadMap = false;
       if (status == google.maps.places.PlacesServiceStatus.OK) {
-        
+
         for (var i = 0; i < results.length; i++) {
           var place = results[i];
 
           place.distance = this.getDistance(this.location.lat,this.location.lng,place.geometry.location.lat(),place.geometry.location.lng());
 
+          let $this = this;
           var marker = new google.maps.Marker({
             map: this.map,
             position: place.geometry.location,
-            title: place.name
+            title: place.name,
+            placeObj: place
           });
+          google.maps.event.addListener(marker,'click', function() {
+              $this.zone.run(() => {$this.currentPlace = this.placeObj;});
+            });
 
           this.markers.push(marker);
         }
@@ -156,7 +170,8 @@ export class MapComponent implements OnInit{
 
       circle.bindTo('center', marker, 'position');
 
-      this.markers.push(marker,circle);
+      this.markers.push(marker);
+      this.markers.push(circle);
     });
 
   }
@@ -165,13 +180,13 @@ export class MapComponent implements OnInit{
   getDistance(lat1,lon1,lat2,lon2): number {
     var R = 6378137;
     var dLat = this.deg2rad(lat2-lat1);
-    var dLon = this.deg2rad(lon2-lon1); 
-    var a = 
+    var dLon = this.deg2rad(lon2-lon1);
+    var a =
     Math.sin(dLat/2) * Math.sin(dLat/2) +
-    Math.cos(this.deg2rad(lat1)) * Math.cos(this.deg2rad(lat2)) * 
+    Math.cos(this.deg2rad(lat1)) * Math.cos(this.deg2rad(lat2)) *
     Math.sin(dLon/2) * Math.sin(dLon/2)
-    ; 
-    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+    ;
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
     var d = R * c;
     return d;
   }
