@@ -9,3 +9,7 @@ $componentMargin: 10px;
   src: url('node_modules/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.eot');
   src: url('node_modules/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('node_modules/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('node_modules/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
 }
+
+.clickable{
+    cursor:pointer;
+}

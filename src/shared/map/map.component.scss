@@ -1,19 +1,23 @@
 @import 'assets/styles/_master.scss';
 
 .gmap {
-	.input-group-addon{
-        &.clickable{
-            cursor:pointer;
-        }
-    }
 
     .glyphicon {
         font-size:20px;
     }
 
+    .optionBox {
+        padding: 25px 15px 15px 15px !important;
+        margin: -25px 1px 29px 0;
+    }
+
+    .placeBox {
+        margin-top:-4px;
+    }
+
 	#map {
         width:100%;
-        height:50%;
+        height:500px;
     }
 
     .panel-body {

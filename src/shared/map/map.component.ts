@@ -17,6 +17,7 @@ export class MapComponent implements OnInit{
   currentPlace: IPlace;
 
   zone: NgZone;
+  showOptions: boolean;
   radius: number;
   placeTypes: {
     bars: boolean,
@@ -36,6 +37,7 @@ export class MapComponent implements OnInit{
   infowindow: any;
   searchBox: any;
   markers: any[];
+  mapW: number;
 
   iconBase: string;
   icons:  {
@@ -49,7 +51,7 @@ export class MapComponent implements OnInit{
     this.zone = zone;
 
     this.currentPlace = null;
-
+    this.showOptions = false;
     this.radius = 100;
     this.placeTypes = {
       bars: true,
@@ -89,7 +91,15 @@ export class MapComponent implements OnInit{
       this.setMap(lat,lng);
     });
 
+    google.maps.event.addDomListener(window, 'resize', event => {
+      this.resizeMap();
+    });
   }
+
+  resizeMap(): void {
+        setTimeout(()=>{google.maps.event.trigger(this.map, 'resize');
+        this.map.setCenter(new google.maps.LatLng(this.location.lat,this.location.lng));},0);
+    };
 
   setMap(lat,lng): void {
     while(this.markers.length){
